@@ -1,0 +1,32 @@
+# macOS
+.DS_Store
+._*
+.Spotlight-V100
+.Trashes
+
+# エディタ
+.vscode/
+.idea/
+*.swp
+
+# 依存関係 / ビルド成果物
+node_modules/
+dist/
+build/
+.cache/
+.parcel-cache/
+.next/
+.output/
+
+# 環境変数
+.env
+.env.*
+!.env.example
+
+# ログ
+*.log
+npm-debug.log*
+yarn-error.log*
+
+# アップロード素材の一時置き場
+tmp/
