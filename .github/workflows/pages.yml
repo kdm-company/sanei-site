@@ -1,0 +1,58 @@
+name: Deploy client preview
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    env:
+      HERO_URL: 'https://prod-files-secure.s3.us-west-2.amazonaws.com/54039a48-505d-48a5-8ff2-3d780c357753/7ec29d0b-96a9-4cca-bd42-d4683cbe499f/37DB91C8-1E44-4D0E-907F-645542B91774.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB466ZDYWV5KF%2F20260830%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20260830T062821Z&X-Amz-Expires=300&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEK7%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJHMEUCIQCZOXw9sVes21YIKEGuvrErYDgjztGe%2BfD%2Fos7X1oRTWwIge8d6XLyfoHSlnLb2h2PPNOO%2FZ8aPBjDosyImsbRq3Aoq%2FwMIdxAAGgw2Mzc0MjMxODM4MDUiDO6TcLos9Ldx6jBKjircAz8tt2Pr53RGkc18L5GgnXUBF91gUbDTOoKn7BifOcPrikarO926lz6ok7C1ZcDPGI5ezDWlo2dtkjnYdIyeK8fJ%2F51D3nn%2FNJ781%2FqRQHJAofW9bBCzBoXXerSNOSQWYb1EencZjXq8zuf4b%2BYZ2a%2BnKKLsA6OVMugHp2NOuENOly7uVwEkl%2BRR2hhSEcfOTUabKJDClObbDmKr5rUem14dRjJj8nhiS40bShvdAOHRSqsYohdr8KacHl05L%2BdpVw3vhLRT7MqgSN6hQo%2FaXjFljlQ2TU2xpBu4lpoqBSRzI83fLYZCfoG0rNev9o%2BxRh3Tafvi7Y1TsN5NQXv9hUJlo%2FKVYJAymLXNWafoqyfVnEDR%2BaOQtjSLUqt81QxSjqVN6R%2BI2kfW5tRR1IiVwEAZw6Gf%2BbsK9Rx2OOOTm8fZhyi%2B9UF45yY84euVCP4zJwLwlvW20BYLsHJXpy0ro%2BJfyFDfcCFM15KYDuWK2B5RFGMvreQQMKFl5R9lBJekNuygri7vBiQDiYy041UZijCUL89P60W9giBIY6xyDDaix%2BlcuZOR3SXL9t%2F1mVe%2B7LmPbhnt6XBE2LcaaoPy%2F%2FTze40zMjuk3t46ARCA3pvbMBrKFhufovo2KK%2BgMIf9ztQGOqUBkJ8liIfPc2oT8vAybFu%2FifJ4oE%2FcFr3IwPMsjTIU9CBknxdbyLU%2B9gL76TjqA2WV5T%2BZgmo%2Bq9S9Db%2FT61cJvCrpPJsjqtq9EBfcmSMJKU32ps9pLXstweZypj2TWb1gd1IKOAw7EID2JjgpmgWG5VQRVrFnkrJI97wQ9O%2BaywZOvDQSJdIf2iqA8Y12M1p0PrFqWnW0VmMP2%2FVJboOqAzvV1TJ1&X-Amz-Signature=d735168760e1f5a225cfd6471b0b39dcf415ebaebea4d2cd747be3a4b839256c&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject'
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Materialize verified hero photo
+        shell: bash
+        run: |
+          mkdir -p assets
+          if [ ! -s assets/hero.png ]; then
+            curl -L --fail --retry 2 "$HERO_URL" -o assets/hero.png
+          fi
+          test "$(stat -c%s assets/hero.png)" -gt 100000
+
+      - name: Persist hero asset to repository
+        shell: bash
+        run: |
+          if ! git ls-files --error-unmatch assets/hero.png >/dev/null 2>&1; then
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add assets/hero.png
+            git commit -m "Add verified hero image asset [skip ci]"
+            git push origin HEAD:main || echo "Could not persist hero asset; continuing deployment"
+          fi
+
+      - uses: actions/configure-pages@v5
+        with:
+          enablement: true
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: .
+
+      - name: Deploy
+        id: deployment
+        uses: actions/deploy-pages@v4
