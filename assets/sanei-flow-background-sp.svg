@@ -1,16 +1,21 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 750 1500" preserveAspectRatio="none">
   <defs>
-    <linearGradient id="flow-sp-main" x1="54" y1="310" x2="704" y2="84" gradientUnits="userSpaceOnUse">
+    <linearGradient id="flow-sp-back" x1="34" y1="330" x2="718" y2="96" gradientUnits="userSpaceOnUse">
       <stop stop-color="#EEF4FB"/>
       <stop offset="0.58" stop-color="#E7F0FA"/>
       <stop offset="1" stop-color="#F5F8FC"/>
     </linearGradient>
-    <linearGradient id="flow-sp-accent" x1="510" y1="650" x2="710" y2="1320" gradientUnits="userSpaceOnUse">
-      <stop stop-color="#CFE1F6" stop-opacity="0.72"/>
-      <stop offset="1" stop-color="#EEF4FB" stop-opacity="0.28"/>
+    <linearGradient id="flow-sp-middle" x1="28" y1="1050" x2="718" y2="540" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#EEF4FB" stop-opacity="0.76"/>
+      <stop offset="0.54" stop-color="#CFE1F6" stop-opacity="0.62"/>
+      <stop offset="1" stop-color="#EEF4FB" stop-opacity="0.4"/>
+    </linearGradient>
+    <linearGradient id="flow-sp-front" x1="170" y1="1460" x2="716" y2="800" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#CFE1F6" stop-opacity="0.48"/>
+      <stop offset="1" stop-color="#8FB8E6" stop-opacity="0.2"/>
     </linearGradient>
   </defs>
-  <path fill="url(#flow-sp-main)" d="M0 288c112 66 214 58 320 8 129-61 229-172 430-216v614c-65 14-108 52-143 108-44 70-95 96-181 90-91-7-139 31-171 116-31 81-88 113-170 99-28-5-56-5-85 0Z"/>
-  <path fill="url(#flow-sp-accent)" d="M750 603c-59-10-111 12-144 67-39 64-75 87-147 81-88-7-145 48-157 139-11 86-52 128-125 159-65 27-103 81-112 161-7 66 6 163 40 290h645Z"/>
-  <path fill="#CFE1F6" fill-opacity="0.34" d="M0 1244c67-54 131-66 191-35 58 30 84 87 158 91 76 3 108-45 177-20 55 19 94 83 119 190l7 30H0Z"/>
+  <path fill="url(#flow-sp-back)" d="M0 291c116 68 217 56 326 4C459 232 555 125 750 78v454c-123 34-206 116-347 128-142 12-232-48-403 64Z"/>
+  <path fill="url(#flow-sp-middle)" d="M0 969c108-96 198-51 293-133 93-80 116-196 225-253 91-48 157-67 232-55v689c-107-32-191-1-280 39-90 41-163 2-254 24-92 23-147 77-216 112Z"/>
+  <path fill="url(#flow-sp-front)" d="M158 1500c15-177 82-287 193-355 113-69 187-54 276-158 47-55 86-97 123-126v639Z"/>
 </svg>
