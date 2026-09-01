@@ -1,16 +1,21 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1500" preserveAspectRatio="none">
   <defs>
-    <linearGradient id="flow-pc-main" x1="90" y1="330" x2="1480" y2="110" gradientUnits="userSpaceOnUse">
+    <linearGradient id="flow-pc-back" x1="80" y1="350" x2="1510" y2="90" gradientUnits="userSpaceOnUse">
       <stop stop-color="#EEF4FB"/>
-      <stop offset="0.56" stop-color="#E7F0FA"/>
+      <stop offset="0.58" stop-color="#E7F0FA"/>
       <stop offset="1" stop-color="#F5F8FC"/>
     </linearGradient>
-    <linearGradient id="flow-pc-accent" x1="1010" y1="880" x2="1540" y2="1390" gradientUnits="userSpaceOnUse">
-      <stop stop-color="#CFE1F6" stop-opacity="0.78"/>
-      <stop offset="1" stop-color="#EEF4FB" stop-opacity="0.34"/>
+    <linearGradient id="flow-pc-middle" x1="100" y1="1110" x2="1510" y2="470" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#EEF4FB" stop-opacity="0.76"/>
+      <stop offset="0.54" stop-color="#CFE1F6" stop-opacity="0.62"/>
+      <stop offset="1" stop-color="#EEF4FB" stop-opacity="0.4"/>
+    </linearGradient>
+    <linearGradient id="flow-pc-front" x1="520" y1="1430" x2="1510" y2="760" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#CFE1F6" stop-opacity="0.48"/>
+      <stop offset="1" stop-color="#8FB8E6" stop-opacity="0.2"/>
     </linearGradient>
   </defs>
-  <path fill="url(#flow-pc-main)" d="M0 304c187 78 337 57 505-20 150-68 252-38 391-88C1066 135 1237 63 1600 38v883c-126-34-218-67-330-36-127 36-208 124-350 104-128-18-210-97-348-75-158 25-256 111-408 63C92 954 44 927 0 906Z"/>
-  <path fill="url(#flow-pc-accent)" d="M1600 808c-72-31-139-19-196 29-63 52-106 64-183 46-113-27-214 26-259 128-35 80-76 111-153 129-69 17-115 51-139 107-22 52-20 128 6 253h924Z"/>
-  <path fill="#CFE1F6" fill-opacity="0.36" d="M0 1284c74-51 141-65 201-42 76 29 101 82 195 85 90 3 131-41 217-12 54 18 88 59 111 123l18 62H0Z"/>
+  <path fill="url(#flow-pc-back)" d="M0 302c186 87 343 60 512-21 174-84 314-52 504-121C1205 91 1384 43 1600 47v644c-174-10-306 27-469 77-192 59-322 4-502 85-167 75-329 86-629-62Z"/>
+  <path fill="url(#flow-pc-middle)" d="M0 1028c176-107 330-20 488-111 151-87 208-244 366-309 177-73 304 15 452-77 108-67 200-91 294-78v744c-156-51-286-25-428 31-142 57-251 8-391 34-178 33-283 127-462 107-139-16-226-79-319-101Z"/>
+  <path fill="url(#flow-pc-front)" d="M413 1500c20-144 93-253 211-320 137-78 239-54 361-157 145-123 293-166 615-270v747Z"/>
 </svg>
