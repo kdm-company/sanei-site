@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1500" preserveAspectRatio="none">
   <defs>
-    <linearGradient id="flow-pc-main" x1="120" y1="110" x2="1390" y2="1280" gradientUnits="userSpaceOnUse">
+    <linearGradient id="flow-pc-main" x1="90" y1="330" x2="1480" y2="110" gradientUnits="userSpaceOnUse">
       <stop stop-color="#EEF4FB"/>
       <stop offset="0.56" stop-color="#E7F0FA"/>
       <stop offset="1" stop-color="#F5F8FC"/>
@@ -10,7 +10,7 @@
       <stop offset="1" stop-color="#EEF4FB" stop-opacity="0.34"/>
     </linearGradient>
   </defs>
-  <path fill="url(#flow-pc-main)" d="M0 78C207 5 374 22 535 149c125 98 208 113 297 226 91 116 55 228 176 315 119 86 204 43 310 93 106 51 173 124 282 137v377c-122-5-207-39-322-13-130 30-216 115-354 83-122-29-205-117-341-121-158-5-259 83-408 43C97 1274 48 1226 0 1200Z"/>
+  <path fill="url(#flow-pc-main)" d="M0 304c187 78 337 57 505-20 150-68 252-38 391-88C1066 135 1237 63 1600 38v883c-126-34-218-67-330-36-127 36-208 124-350 104-128-18-210-97-348-75-158 25-256 111-408 63C92 954 44 927 0 906Z"/>
   <path fill="url(#flow-pc-accent)" d="M1600 808c-72-31-139-19-196 29-63 52-106 64-183 46-113-27-214 26-259 128-35 80-76 111-153 129-69 17-115 51-139 107-22 52-20 128 6 253h924Z"/>
   <path fill="#CFE1F6" fill-opacity="0.36" d="M0 1284c74-51 141-65 201-42 76 29 101 82 195 85 90 3 131-41 217-12 54 18 88 59 111 123l18 62H0Z"/>
 </svg>
