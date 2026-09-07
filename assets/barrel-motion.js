@@ -14,6 +14,12 @@
   let width = 0, height = 0, particles = [], frame = 0, last = 0;
   let visible = true;
   const random = (min, max) => min + Math.random() * (max - min);
+  // Analogous hues around the site's blue: blue-green, blue, and blue-violet.
+  const palette = [
+    ['#d7edff', '#83b8ed', '#437dbb'],
+    ['#cef5f0', '#70d3c7', '#398f9c'],
+    ['#e5dfff', '#aba0ed', '#7068b5']
+  ];
 
   function resize() {
     width = hero.clientWidth;
@@ -41,12 +47,13 @@
       ctx.globalAlpha = p.depth * (0.17 + 0.38 * p.x / width);
       const r = p.size;
       const metal = p.type === 0;
+      const colors = palette[metal ? 0 : (p.type % 2 ? 1 : 2)];
       const gradient = ctx.createLinearGradient(-r, -r, r, r);
-      gradient.addColorStop(0, metal ? '#ffffff' : '#d1e3f4');
-      gradient.addColorStop(0.45, metal ? '#a6c3dd' : '#8aafd0');
-      gradient.addColorStop(1, metal ? '#527ba3' : '#527fa8');
+      gradient.addColorStop(0, colors[0]);
+      gradient.addColorStop(0.45, colors[1]);
+      gradient.addColorStop(1, colors[2]);
       ctx.fillStyle = gradient;
-      ctx.strokeStyle = '#d8ebff';
+      ctx.strokeStyle = colors[0];
       ctx.lineWidth = 0.7;
       ctx.beginPath();
       if (metal) {
@@ -65,7 +72,7 @@
       if (p.shine > 0) {
         // A short surface glint at contact, never a spark or flash.
         ctx.globalAlpha = p.shine * 0.42;
-        ctx.strokeStyle = '#ffffff';
+        ctx.strokeStyle = colors[0];
         ctx.lineWidth = 1.2;
         ctx.beginPath();
         ctx.moveTo(-r * 0.5, -r * 0.35);
