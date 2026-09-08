@@ -1,0 +1,71 @@
+/* Purposeful entry links, shared WORKS / HISTORY canvas and two-panel contact frame. */
+.purposeNav{padding:32px 40px}
+.purposeNav h2{font-size:17px;margin-bottom:24px}
+.purposeLinks{display:grid;grid-template-columns:repeat(3,minmax(0,1fr))}
+.purposeLinks a{position:relative;padding:8px 32px 8px 24px;display:flex;flex-direction:column;gap:5px;border-left:1px solid var(--line)}
+.purposeLinks a:first-child{border-left:0}
+.purposeLinks .purposeNum{font:700 11px Arial;color:var(--teal);letter-spacing:.12em}
+.purposeLinks strong{font-size:15px;line-height:1.7}
+.purposeLinks a>span:not(.purposeNum){font-size:11px;color:var(--gray)}
+.purposeLinks b{position:absolute;right:10px;top:40%;color:var(--blue)}
+.purposeLinks a:hover strong{color:var(--blue)}
+.purposeLinks a:focus-visible{outline:2px solid var(--blue);outline-offset:3px}
+.worksHistory{background:#EEF4FB url("sanei-flow-background-pc.svg?v=analogous-1") center / 100% 100% no-repeat;border-top:1px solid var(--line)}
+.flowSections .worksHistory .worksSection{background:transparent;border-top:0;padding-bottom:64px}
+.historyBand.historyEditorial{background:transparent;padding:40px 0 104px;color:var(--dark)}
+.historyLayout{display:grid;grid-template-columns:1.08fr 1fr;align-items:center;gap:72px}
+.historyVisual{margin:0;position:relative}
+.historyVisual img{aspect-ratio:5 / 4;object-fit:cover;box-shadow:0 18px 42px -22px rgba(35,71,117,.4)}
+.historyVisual figcaption{position:absolute;bottom:24px;left:-18px;padding:14px 24px;background:#fff;color:var(--deep);font-size:14px;letter-spacing:.13em}
+.historyEyebrow{font:700 12px Arial;color:var(--teal);letter-spacing:.18em}
+.historyStory h2{font-family:"Noto Serif JP","Yu Mincho",serif;font-size:clamp(26px,3vw,38px);line-height:1.6;letter-spacing:.08em;margin:18px 0 22px;color:var(--deep)}
+.historyStory p{font-size:14px;line-height:2.15;margin:0}
+.historyFacts{display:flex;gap:36px;border-top:1px solid #CAD8E8;margin-top:26px;padding-top:20px}
+.historyFacts div{display:flex;flex-direction:column;gap:5px}
+.historyFacts span{font-size:11px;color:var(--gray)}
+.historyFacts strong{font-size:19px;font-weight:600;color:var(--deep)}
+.historyLink{display:inline-flex;align-items:center;gap:38px;color:var(--blue);font-size:13px;font-weight:700;margin-top:28px;border-bottom:1px solid var(--light);padding-bottom:8px}
+.historyLink:hover{color:var(--deep)}
+.contactBanner.contactFrame{padding:58px 5%;gap:38px}
+.contactFrame h2{position:relative;z-index:1;font-family:"Noto Sans JP",Meiryo,sans-serif;font-size:clamp(20px,2.6vw,29px);line-height:1.7;letter-spacing:.08em}
+.contactFrameGrid{width:100%;display:grid;grid-template-columns:1fr 1fr;gap:28px;position:relative;z-index:1}
+.contactFrameMail,.contactFramePhone{min-height:158px;padding:26px 20px;display:flex;align-items:center;justify-content:center}
+.contactFrameMail{gap:20px;color:#fff;background:var(--blue);transition:background .2s}
+.contactFrameMail:hover{background:var(--deep)}
+.contactFrameMail:focus-visible{outline:3px solid #fff;outline-offset:4px}
+.contactFrameMail>span:not(.mailSymbol):not(.frameArrow){display:flex;flex-direction:column;gap:8px}
+.contactFrameMail small{font-size:14px;font-weight:700}
+.contactFrameMail strong{font:700 italic 38px/1 Arial,sans-serif;letter-spacing:.03em}
+.mailSymbol{font:32px Arial,sans-serif}
+.frameArrow{font-size:23px}
+.contactFramePhone{background:#fff;color:var(--dark);flex-direction:column;gap:10px}
+.contactFramePhone>span{font-size:14px;font-weight:700}
+.contactFramePhone strong{font-size:21px;line-height:1.5;color:var(--deep)}
+.contactFramePhone small{font-size:11px;color:var(--gray);line-height:1.8}
+@media(max-width:900px){
+ .historyLayout{gap:36px}
+ .contactFrameGrid{gap:18px}
+ .contactFrameMail{gap:12px}
+ .contactFrameMail small{font-size:12px}
+}
+@media(max-width:767px){
+ .purposeNav{padding:26px 22px}
+ .purposeLinks{grid-template-columns:1fr}
+ .purposeLinks a{border-left:0;border-top:1px solid var(--line);padding:16px 30px 16px 4px}
+ .purposeLinks a:first-child{border-top:0}
+ .purposeLinks b{right:4px}
+ .worksHistory{background-image:url("sanei-flow-background-sp.svg?v=analogous-1")}
+ .flowSections .worksHistory .worksSection{padding-bottom:32px}
+ .historyBand.historyEditorial{padding:24px 0 64px}
+ .historyLayout{grid-template-columns:1fr;gap:30px}
+ .historyVisual img{aspect-ratio:4 / 3}
+ .historyVisual figcaption{left:0;bottom:18px;font-size:12px}
+ .historyStory h2{font-size:27px}
+ .contactBanner.contactFrame{padding:34px 22px;gap:26px}
+ .contactFrame h2{text-wrap:balance}
+ .contactFrameGrid{grid-template-columns:1fr;gap:16px}
+ .contactFrameMail,.contactFramePhone{min-height:136px;padding:24px 16px}
+ .contactFrameMail strong{font-size:34px}
+ .contactFramePhone strong{font-size:19px}
+}
+@media(prefers-reduced-motion:reduce){.contactFrameMail{transition:none}}
