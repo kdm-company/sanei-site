@@ -1,0 +1,14 @@
+/* A continuous finishing line links SERVICE to WORKS without a blank divider. */
+.nav .cta{background:var(--blue);transition:background .2s}
+.nav .cta:hover{background:var(--deep)}
+.nav .cta:focus-visible{outline:2px solid var(--blue);outline-offset:4px}
+.mobile-menu nav a:last-child{color:var(--blue)}
+.flowSections>.section:first-of-type{padding-bottom:0}
+.flowSections .serviceGrid{padding-bottom:0}
+.flowSections .worksSection{padding-top:144px}
+.flowSections .worksSection:before{content:"";position:absolute;top:20px;left:5%;width:90%;height:104px;background:url("section-flow.svg") center / 100% 100% no-repeat;pointer-events:none}
+@media(max-width:767px){
+ .flowSections .worksSection{padding-top:104px}
+ .flowSections .worksSection:before{top:16px;height:68px;transform:scaleX(-1)}
+}
+@media(prefers-reduced-motion:reduce){.nav .cta{transition:none}}
