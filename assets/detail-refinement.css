@@ -1,0 +1,25 @@
+/* Requested header, news and contact refinements. */
+.header .brand{width:178px}
+.nav a.current{height:auto;position:relative;border-bottom:0}
+.nav a.current:after{content:"";position:absolute;left:0;right:0;bottom:-10px;height:2px;background:var(--blue)}
+.news{display:block}
+.news h2{text-align:center;margin:0 0 22px}
+.contactBannerSection{padding:48px 0}
+.contactBanner{border-top:0;background:#21364D;padding:54px 40px;box-shadow:0 20px 44px -16px rgba(23,40,61,.42),0 5px 14px rgba(23,40,61,.12)}
+.contactBanner:before{inset:-8px;opacity:.48;filter:blur(2px);background-position:center}
+.contactBanner:after{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;background:linear-gradient(115deg,rgba(22,55,67,.55),rgba(28,48,77,.66) 58%,rgba(52,48,88,.56))}
+.contactBanner .bannerWaves{z-index:0;opacity:.07;filter:blur(2px)}
+.contactBanner .bannerTitle,.contactBanner .bannerCopy,.contactBanner .bannerAction{position:relative;z-index:1}
+.contactBanner .bannerJa,.contactBanner h2,.contactBanner p,.contactBanner .bannerMeta{color:#fff}
+.contactBanner .bannerCopy{max-width:780px}
+.contactBanner .bannerAction{width:560px;max-width:100%;margin-top:30px}
+.contactBanner .bannerLink{width:100%;min-height:94px;border-radius:0;font-size:19px;gap:36px;box-shadow:0 8px 22px rgba(8,24,43,.24)}
+.contactBanner .bannerArrow{font-size:26px}
+@media(max-width:767px){
+ .header .brand{width:144px}
+ .news h2{margin-bottom:16px}
+ .contactBannerSection{padding:32px 0}
+ .contactBanner{padding:36px 24px}
+ .contactBanner:before{opacity:.4}
+ .contactBanner .bannerLink{min-height:76px;font-size:16px;gap:24px}
+}
