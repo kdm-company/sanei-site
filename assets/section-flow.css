@@ -1,14 +1,14 @@
-/* A continuous finishing line links SERVICE to WORKS without a blank divider. */
+/* White SERVICE and analogous wave WORKS meet at a straight horizontal edge. */
 .nav .cta{background:var(--blue);transition:background .2s}
 .nav .cta:hover{background:var(--deep)}
 .nav .cta:focus-visible{outline:2px solid var(--blue);outline-offset:4px}
 .mobile-menu nav a:last-child{color:var(--blue)}
-.flowSections>.section:first-of-type{padding-bottom:0}
+.flowSections>.flowSectionsBg{display:none}
+.flowSections>.section:first-of-type{background:#fff;padding-bottom:80px}
 .flowSections .serviceGrid{padding-bottom:0}
-.flowSections .worksSection{padding-top:144px}
-.flowSections .worksSection:before{content:"";position:absolute;top:20px;left:5%;width:90%;height:104px;background:url("section-flow.svg") center / 100% 100% no-repeat;pointer-events:none}
+.flowSections .worksSection{padding-top:80px;border-top:1px solid var(--line);background:#EEF4FB url("sanei-flow-background-pc.svg?v=analogous-1") center / 100% 100% no-repeat}
 @media(max-width:767px){
- .flowSections .worksSection{padding-top:104px}
- .flowSections .worksSection:before{top:16px;height:68px;transform:scaleX(-1)}
+ .flowSections>.section:first-of-type{padding-bottom:56px}
+ .flowSections .worksSection{padding-top:56px;background-image:url("sanei-flow-background-sp.svg?v=analogous-1")}
 }
 @media(prefers-reduced-motion:reduce){.nav .cta{transition:none}}
