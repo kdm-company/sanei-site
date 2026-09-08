@@ -2,17 +2,17 @@
   <defs>
     <linearGradient id="flow-pc-back" x1="80" y1="350" x2="1510" y2="90" gradientUnits="userSpaceOnUse">
       <stop stop-color="#EEF4FB"/>
-      <stop offset="0.58" stop-color="#E7F0FA"/>
+      <stop offset="0.58" stop-color="#E7F3F4"/>
       <stop offset="1" stop-color="#F5F8FC"/>
     </linearGradient>
     <linearGradient id="flow-pc-middle" x1="100" y1="1110" x2="1510" y2="470" gradientUnits="userSpaceOnUse">
       <stop stop-color="#EEF4FB" stop-opacity="0.76"/>
-      <stop offset="0.54" stop-color="#CFE1F6" stop-opacity="0.62"/>
+      <stop offset="0.54" stop-color="#DBE8F3" stop-opacity="0.62"/>
       <stop offset="1" stop-color="#EEF4FB" stop-opacity="0.4"/>
     </linearGradient>
     <linearGradient id="flow-pc-front" x1="520" y1="1430" x2="1510" y2="760" gradientUnits="userSpaceOnUse">
-      <stop stop-color="#CFE1F6" stop-opacity="0.48"/>
-      <stop offset="1" stop-color="#8FB8E6" stop-opacity="0.2"/>
+      <stop stop-color="#DBE8F3" stop-opacity="0.48"/>
+      <stop offset="1" stop-color="#ADA9DF" stop-opacity="0.2"/>
     </linearGradient>
   </defs>
   <path fill="url(#flow-pc-back)" d="M0 302c186 87 343 60 512-21 174-84 314-52 504-121C1205 91 1384 43 1600 47v644c-174-10-306 27-469 77-192 59-322 4-502 85-167 75-329 86-629-62Z"/>

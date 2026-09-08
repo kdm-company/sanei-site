@@ -2,17 +2,17 @@
   <defs>
     <linearGradient id="flow-sp-back" x1="34" y1="330" x2="718" y2="96" gradientUnits="userSpaceOnUse">
       <stop stop-color="#EEF4FB"/>
-      <stop offset="0.58" stop-color="#E7F0FA"/>
+      <stop offset="0.58" stop-color="#E7F3F4"/>
       <stop offset="1" stop-color="#F5F8FC"/>
     </linearGradient>
     <linearGradient id="flow-sp-middle" x1="28" y1="1050" x2="718" y2="540" gradientUnits="userSpaceOnUse">
       <stop stop-color="#EEF4FB" stop-opacity="0.76"/>
-      <stop offset="0.54" stop-color="#CFE1F6" stop-opacity="0.62"/>
+      <stop offset="0.54" stop-color="#DBE8F3" stop-opacity="0.62"/>
       <stop offset="1" stop-color="#EEF4FB" stop-opacity="0.4"/>
     </linearGradient>
     <linearGradient id="flow-sp-front" x1="170" y1="1460" x2="716" y2="800" gradientUnits="userSpaceOnUse">
-      <stop stop-color="#CFE1F6" stop-opacity="0.48"/>
-      <stop offset="1" stop-color="#8FB8E6" stop-opacity="0.2"/>
+      <stop stop-color="#DBE8F3" stop-opacity="0.48"/>
+      <stop offset="1" stop-color="#ADA9DF" stop-opacity="0.2"/>
     </linearGradient>
   </defs>
   <path fill="url(#flow-sp-back)" d="M0 291c116 68 217 56 326 4C459 232 555 125 750 78v454c-123 34-206 116-347 128-142 12-232-48-403 64Z"/>
