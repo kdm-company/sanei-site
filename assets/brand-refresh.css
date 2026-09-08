@@ -1,0 +1,13 @@
+/* Supplied logo, displayed through its transparent outer margins without editing it. */
+.header .brand{position:relative;display:block;flex:none;width:210px;aspect-ratio:1290 / 370;overflow:hidden}
+.header .brand img{position:absolute;width:112.25%;max-width:none;height:auto;left:-6.2%;top:-94.6%}
+.historyBand{background:linear-gradient(115deg,#EDF6F7 0%,#E4EEF9 44%,#EAE8F6 76%);color:var(--dark)}
+.historyBand .en{color:var(--blue)}
+.historyBand p{color:var(--gray)}
+.historyBand .button{border-color:var(--blue);color:var(--blue)}
+.contactBanner:before{content:"";position:absolute;inset:0;z-index:-2;background:url("photos/06_factory_processing_line.webp") center 54% / cover no-repeat;opacity:.12;pointer-events:none}
+@media(max-width:767px){
+ .header .brand{width:164px}
+ .historyBand .historyPhoto{opacity:.09}
+ .contactBanner:before{background-position:60% center;opacity:.09}
+}
