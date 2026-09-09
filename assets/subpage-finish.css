@@ -89,6 +89,8 @@
  .subpage .pageHero{min-height:370px}
  .subpage .pageHero .wrap{padding:56px 0 52px}
  .subpage .pageHero h1{font-size:34px}
+ .barrelPage .pageHero h1{font-size:31px}
+ .privacyPage .pageHero h1{font-size:28px}
  .subpage .pageHero p{font-size:12px}
  .pageIndex{height:auto;margin-top:-14px;display:grid;grid-template-columns:1fr 1fr}
  .pageIndex a{min-height:52px;border-bottom:1px solid var(--line);font-size:11px}
@@ -104,8 +106,9 @@
  .companyPage .timeline li{grid-template-columns:1fr;gap:7px}
  .companyPage .timeline li:before{left:-26px}
  .companyPage .profile th,.companyPage .profile td{padding:14px 12px}
- .contactPage .contactInfo{grid-template-columns:1fr}
+ .contactPage .contactInfo{grid-template-columns:minmax(0,1fr)}
  .contactPage .infoCard{padding:28px 24px}
+ .contactPage .contactPhoneNumber[href^="mailto:"]{font-size:clamp(17px,4.8vw,22px);overflow-wrap:anywhere}
  .guideGrid{grid-template-columns:1fr 1fr;gap:10px}
  .guideGrid article{padding:20px 16px;min-height:150px}
  .phoneCta{padding:25px 20px;display:block;text-align:center}
