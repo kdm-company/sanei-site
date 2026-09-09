@@ -1,4 +1,8 @@
 .serviceCard,.workCard{position:relative}
+.works{align-items:stretch}
+.workCard{display:flex;flex-direction:column}
+.workCard .workBody{display:flex;flex:1;flex-direction:column}
+.workCard .cardDetail{margin-top:auto}
 .cardDetail{display:flex;align-items:center;justify-content:space-between;gap:18px;margin-top:18px;padding-top:12px;border-top:1px solid var(--line);font-size:12px;font-weight:700;color:var(--blue)}
 .cardDetail:after{content:"";position:absolute;inset:0;z-index:3}
 .cardDetail:hover{color:var(--deep)}

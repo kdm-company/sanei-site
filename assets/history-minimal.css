@@ -1,13 +1,20 @@
-.historyMinimal .historyLayout{grid-template-columns:1fr 1fr;gap:64px;align-items:start;padding-top:40px;border-top:1px solid rgba(35,71,117,.18)}
-.historyMinimal .historyIntro h2{font-family:"Noto Serif JP","Yu Mincho",serif;font-size:clamp(28px,3.2vw,40px);font-weight:600;line-height:1.7;letter-spacing:.06em;color:var(--deep);margin:22px 0 0}
-.historyMinimal .historyStory{padding-top:4px}
+.historyMinimal{position:relative;overflow:hidden}
+.historyMinimal:before{content:"50";position:absolute;right:4%;top:-44px;font:700 230px/1 Arial,sans-serif;color:rgba(86,82,163,.055);letter-spacing:-.08em;pointer-events:none}
+.historyMinimal .historyLayout{position:relative;grid-template-columns:.88fr 1.12fr;gap:88px;align-items:start;padding:62px 0 10px;border-top:1px solid rgba(35,71,117,.18)}
+.historyMinimal .historyLayout:before{content:"";position:absolute;left:calc(44% - 1px);top:62px;bottom:10px;width:1px;background:linear-gradient(var(--teal),rgba(56,116,188,.16))}
+.historyMinimal .historyEyebrow{display:flex;align-items:center;gap:14px}
+.historyMinimal .historyEyebrow:before{content:"";width:34px;height:1px;background:var(--teal)}
+.historyMinimal .historyIntro h2{font-family:"Noto Serif JP","Yu Mincho",serif;font-size:clamp(30px,3.35vw,42px);font-weight:600;line-height:1.72;letter-spacing:.075em;color:var(--deep);margin:24px 0 0}
+.historyMinimal .historyStory{padding:8px 0 0}
 .historyMinimal .historyStory p{font-size:14px;line-height:2.2}
-.historyMinimal .historyFacts{border-top:0;padding-top:0;margin:26px 0 6px;gap:48px}
+.historyMinimal .historyFacts{border-top:1px solid rgba(35,71,117,.14);border-bottom:1px solid rgba(35,71,117,.14);padding:20px 0;margin:28px 0 8px;gap:56px}
 .historyMinimal .historyFacts strong{font-size:18px}
-.historyMinimal .historyLink{display:flex;width:100%;justify-content:space-between;margin-top:20px;padding:12px 0;border-color:rgba(35,71,117,.2)}
+.historyMinimal .historyLink{display:flex;width:100%;justify-content:space-between;margin-top:12px;padding:12px 0;border-color:rgba(35,71,117,.2)}
 .historyMinimal .companyOverviewLink{margin-top:0}
 @media(max-width:767px){
- .historyMinimal .historyLayout{grid-template-columns:1fr;gap:24px;padding-top:28px}
+ .historyMinimal:before{right:-12px;top:4px;font-size:132px}
+ .historyMinimal .historyLayout{grid-template-columns:1fr;gap:28px;padding-top:34px}
+ .historyMinimal .historyLayout:before{display:none}
  .historyMinimal .historyIntro h2{font-size:28px;margin-top:16px}
  .historyMinimal .historyFacts{gap:36px}
 }
