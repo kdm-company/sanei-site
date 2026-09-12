@@ -1,5 +1,5 @@
 .historyMinimal{position:relative;overflow:hidden}
-.historyMinimal:before{content:"1965";position:absolute;right:4%;top:-44px;font:700 230px/1 Arial,sans-serif;color:rgba(86,82,163,.055);letter-spacing:-.08em;pointer-events:none}
+.historyMinimal:before{content:"1972";position:absolute;right:4%;top:-44px;font:700 230px/1 Arial,sans-serif;color:rgba(86,82,163,.055);letter-spacing:-.08em;pointer-events:none}
 .historyMinimal .historyLayout{position:relative;grid-template-columns:.88fr 1.12fr;gap:88px;align-items:start;padding:62px 0 10px;border-top:1px solid rgba(35,71,117,.18)}
 .historyMinimal .historyLayout:before{content:"";position:absolute;left:calc(44% - 1px);top:62px;bottom:10px;width:1px;background:linear-gradient(var(--teal),rgba(56,116,188,.16))}
 .historyMinimal .historyEyebrow{display:flex;align-items:center;gap:14px}
