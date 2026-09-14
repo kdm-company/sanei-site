@@ -1,0 +1,223 @@
+/* Content-only layouts. Shared header, contact banner and footer sit outside main. */
+.subpageContent { --space: clamp(72px, 8vw, 120px); }
+.subpageContent .section { padding: var(--space) 0; scroll-margin-top: 24px; }
+.subpageContent .heading { display: flex; flex-direction: column; gap: 12px; margin: 0 0 36px; }
+.subpageContent .heading .ja { margin: 0; color: var(--deep); font-size: clamp(23px, 2.4vw, 32px); font-weight: 600; line-height: 1.55; letter-spacing: .08em; text-wrap: balance; }
+.subpageContent .heading .en { order: -1; margin: 0; color: var(--teal); font: 700 12px/1.5 Arial, sans-serif; letter-spacing: .2em; }
+.subpageContent .bodyText, .subpageContent .lead { font-size: 15px; line-height: 2.1; }
+.subpageContent .pageHero { min-height: 0; background: #eef4f8; color: var(--deep); }
+.subpageContent .pageHero::before, .subpageContent .pageHero::after { content: none; }
+.subpageContent .pageHero .barrelMotion { display: none; }
+.subpageContent .pageHero > .wrap { padding: 64px 0 46px; display: grid; grid-template-columns: 1fr 1fr; column-gap: 72px; align-items: center; }
+.subpageContent .pageHero .ey { border: 0; padding: 0; color: var(--teal); font-size: 10px; }
+.subpageContent .pageHero .en { margin: 12px 0 0; color: var(--blue); font-size: 12px; grid-column: 1; }
+.subpageContent .pageHero h1 { grid-column: 1; font-size: clamp(30px, 3.7vw, 48px); line-height: 1.6; margin: 14px 0 24px; letter-spacing: .06em; text-wrap: balance; }
+.subpageContent .pageHero p { grid-column: 2; grid-row: 1 / span 3; color: var(--gray); font-size: 14px; border-left: 1px solid #b9ccdb; padding-left: 34px; margin: 0; }
+.subpageContent .breadcrumb { grid-column: 1 / -1; color: var(--gray); margin-top: 16px; }
+.subpageContent .breadcrumb a:hover { color: var(--blue); }
+.subpageContent .pageIndex { margin-top: 0; height: 64px; box-shadow: none; background: #fff; border-bottom: 1px solid var(--line); }
+.subpageContent .pageIndex a { border-left: 0; justify-content: space-between; padding: 12px 20px; }
+.subpageContent .pageIndex a + a { border-left: 1px solid var(--line); }
+.subpageContent a:focus-visible { outline: 2px solid var(--blue); outline-offset: 5px; }
+
+/* Processing: explanation, visual comparison, service list, then a sequential flow. */
+.barrelPage .subpageContent .pageHero { background: var(--deep); color: #fff; }
+.barrelPage .subpageContent .pageHero .ey, .barrelPage .subpageContent .pageHero .en { color: #b9dce6; }
+.barrelPage .subpageContent .pageHero p, .barrelPage .subpageContent .breadcrumb { color: #e0eaf6; }
+.barrelPage .subpageContent .breadcrumb a:hover { color: #fff; }
+.barrelPage .subpageContent #about .split { grid-template-columns: 1fr 1.05fr; gap: 64px; align-items: center; }
+.barrelPage .subpageContent #about .split > div { grid-column: 2; grid-row: 1; }
+.barrelPage .subpageContent #about .splitPhoto { grid-column: 1; grid-row: 1; box-shadow: none; aspect-ratio: 1; }
+.barrelPage .subpageContent #about .bodyText:first-child { margin-top: 0; color: var(--deep); font-size: 17px; }
+.barrelPage .subpageContent .strengthList { margin-top: 64px; border: 0; gap: 36px; }
+.barrelPage .subpageContent .strength { border: 0; border-top: 1px solid #b9ccdb; padding: 24px 0 0; background: transparent; }
+.barrelPage .subpageContent .strength .num { font-size: 12px; }
+.barrelPage .subpageContent .strength h3 { margin: 12px 0; font-size: 20px; }
+.barrelPage .subpageContent .resultSection { background: #edf4f7; }
+.barrelPage .subpageContent .resultSection > .wrap { display: grid; grid-template-columns: .65fr 1.35fr; column-gap: 56px; align-items: start; }
+.barrelPage .subpageContent .resultSection .heading { grid-column: 1; margin-bottom: 20px; }
+.barrelPage .subpageContent .resultSection .lead { grid-column: 1; margin: 0; }
+.barrelPage .subpageContent .beforeAfter { grid-column: 2; grid-row: 1 / span 2; gap: 16px; }
+.barrelPage .subpageContent .beforeAfter figure { box-shadow: none; padding: 0; background: transparent; }
+.barrelPage .subpageContent .beforeAfter figure::before { top: 12px; left: 12px; font-size: 10px; }
+.barrelPage .subpageContent .beforeAfter figcaption { margin: 16px 0 0; padding-top: 10px; border-top: 1px solid #b9ccdb; }
+.barrelPage .subpageContent #processing > .wrap { display: grid; grid-template-columns: .6fr 1.4fr; gap: 64px; align-items: start; }
+.barrelPage .subpageContent #processing .heading { position: sticky; top: 40px; }
+.barrelPage .subpageContent #processing .processGrid { display: block; }
+.barrelPage .subpageContent #processing .processItem { display: grid; grid-template-columns: 28px 210px minmax(0, 1fr); gap: 20px; padding: 28px 0; border: 0; border-top: 1px solid var(--line); box-shadow: none; }
+.barrelPage .subpageContent #processing .processItem::before { margin: 3px 0 0; font-size: 11px; }
+.barrelPage .subpageContent #processing .processItem b { font-size: 17px; font-weight: 600; text-wrap: balance; }
+.barrelPage .subpageContent #processing .processItem p { margin: 0; font-size: 14px; }
+.barrelPage .subpageContent #processing .processItem:last-child { background: #edf4f7; padding: 26px 24px; margin-top: 12px; border: 0; grid-template-columns: 28px minmax(0, 1fr); }
+.barrelPage .subpageContent #processing .processItem:last-child p { grid-column: 2; }
+.barrelPage .subpageContent #equipment { background: #f7f9fb; }
+.barrelPage .subpageContent #equipment .processGrid { grid-template-columns: repeat(4, minmax(0, 1fr)); background: transparent; gap: 0; border-top: 1px solid #b9ccdb; }
+.barrelPage .subpageContent #equipment .processItem { padding: 28px 24px; min-height: 0; border: 0; border-left: 1px solid var(--line); background: transparent; position: relative; }
+.barrelPage .subpageContent #equipment .processItem:first-child { border-left: 0; padding-left: 0; }
+.barrelPage .subpageContent #equipment .processItem:not(:last-child)::after { content: '→'; position: absolute; top: -18px; right: -12px; background: #f7f9fb; color: var(--teal); padding: 0 5px; }
+.barrelPage .subpageContent #equipment .processItem b { font-size: 16px; }
+.barrelPage .subpageContent #equipment .equipment { margin: 42px 0 64px; gap: 28px; }
+.barrelPage .subpageContent #equipment .equipment article { padding: 26px 30px; background: #fff; border: 0; display: grid; grid-template-columns: 150px 1fr; align-items: baseline; gap: 24px; }
+.barrelPage .subpageContent .equipment h3 { font-size: 18px; margin: 0; }
+.barrelPage .subpageContent .equipment p { margin: 0; }
+.barrelPage .subpageContent .gallery { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 20px; overflow: visible; }
+.barrelPage .subpageContent .gallery figure { min-width: 0; margin: 0; }
+.barrelPage .subpageContent .gallery figure:first-child { grid-row: span 2; display: flex; flex-direction: column; }
+.barrelPage .subpageContent .gallery figure:first-child img { flex: 1; min-height: 0; height: 100%; }
+.barrelPage .subpageContent .gallery img { aspect-ratio: 4 / 3; filter: none; }
+
+/* Company: an editorial introduction, a compact facts table and a horizontal history. */
+.companyPage .subpageContent .pageHero > .wrap { padding: 56px 0; grid-template-columns: 1.08fr .92fr; gap: 64px; }
+.companyPage .subpageContent .companyHeroCopy { min-width: 0; }
+.companyPage .subpageContent .pageHero h1 { margin-bottom: 20px; }
+.companyPage .subpageContent .pageHero p { padding: 0; border: 0; }
+.companyPage .subpageContent .companyHeroPhoto { aspect-ratio: 5 / 4; object-fit: cover; }
+.companyPage .subpageContent #about > .wrap { display: grid; grid-template-columns: .65fr 1.35fr; gap: 64px; }
+.companyPage .subpageContent #about .split { display: block; }
+.companyPage .subpageContent #about .split > div { display: grid; grid-template-columns: 1fr 1fr; column-gap: 32px; }
+.companyPage .subpageContent #about .bodyText:first-child { grid-column: 1 / -1; margin-top: 0; margin-bottom: 28px; font-size: 19px; color: var(--deep); }
+.companyPage .subpageContent #about .bodyText:not(:first-child) { font-size: 14px; }
+.companyPage .subpageContent .profileSection { background: #f5f8fb; }
+.companyPage .subpageContent .profileSection > .wrap { display: grid; grid-template-columns: .65fr 1.35fr; gap: 64px; align-items: start; }
+.companyPage .subpageContent .profile { background: transparent; box-shadow: none; }
+.companyPage .subpageContent .profile th, .companyPage .subpageContent .profile td { padding: 20px 0; background: transparent; border-top: 0; border-bottom: 1px solid #d3dfe8; }
+.companyPage .subpageContent .profile th { width: 140px; padding-right: 24px; }
+.companyPage .subpageContent .profile td { font-size: 14px; }
+.companyPage .subpageContent .timeline { padding: 0; display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 36px; }
+.companyPage .subpageContent .timeline::before { content: none; }
+.companyPage .subpageContent .timeline li { display: block; border: 0; border-top: 1px solid #b9ccdb; padding: 28px 0 0; }
+.companyPage .subpageContent .timeline li::before { left: 0; top: -6px; border: 0; width: 9px; height: 9px; box-shadow: none; }
+.companyPage .subpageContent .timeline time { display: block; margin-bottom: 24px; font-size: 30px; color: var(--blue); font-weight: 500; letter-spacing: .04em; }
+.companyPage .subpageContent .timeline .bodyText { font-size: 14px; }
+.companyPage .subpageContent .trustRefined { background: #eaf2f5; color: var(--deep); }
+.companyPage .subpageContent .trustRefined > .wrap { display: grid; grid-template-columns: .6fr 1fr 1fr; gap: 48px; }
+.companyPage .subpageContent .trustRefined .heading .ja { color: var(--deep); }
+.companyPage .subpageContent .trustRefined .heading .en { color: var(--teal); }
+.companyPage .subpageContent .trustRefined p { color: var(--gray); margin: 0; font-size: 15px; }
+.companyPage .subpageContent #access { background: #fff; }
+.companyPage .subpageContent .accessGrid { grid-template-columns: 1.5fr .7fr; gap: 40px; align-items: center; }
+.companyPage .subpageContent .mapFrame { grid-column: 1; grid-row: 1; height: 420px; filter: none; }
+.companyPage .subpageContent .accessCard { grid-column: 2; grid-row: 1; border: 0; padding: 0; box-shadow: none; }
+.companyPage .subpageContent .accessCard h3 { font-size: 21px; }
+.companyPage .subpageContent .accessCard p { font-size: 14px; }
+
+/* Contact: action first; preparation follows as a numbered checklist. */
+.contactPage .subpageContent #contact-method > .wrap { display: grid; grid-template-columns: .65fr 1.35fr; gap: 48px; }
+.contactPage .subpageContent .contactInfo { display: flex; flex-direction: column; gap: 0; border: 1px solid var(--line); }
+.contactPage .subpageContent .infoCard { padding: 34px 40px; border: 0; box-shadow: none; }
+.contactPage .subpageContent .infoCard:first-child { background: var(--deep); }
+.contactPage .subpageContent .infoCard .label { font-size: 11px; }
+.contactPage .subpageContent .infoCard h3 { font-size: 19px; margin: 10px 0; }
+.contactPage .subpageContent .infoCard p { margin: 14px 0 0; font-size: 14px; }
+.contactPage .subpageContent .contactPhoneNumber { font-size: clamp(27px,3.2vw,42px); padding: 0; letter-spacing: .02em; }
+.contactPage .subpageContent .contactPhoneNumber[href^='mailto:'] { font-size: clamp(20px,2.5vw,32px); overflow-wrap: anywhere; }
+.contactPage .subpageContent .infoLink { padding-top: 16px; margin-top: 26px; font-size: 13px; }
+.contactPage .subpageContent .contactGuide { background: #f4f8fa; }
+.contactPage .subpageContent .contactGuide > .wrap { display: grid; grid-template-columns: .75fr 1.25fr; column-gap: 80px; align-items: start; }
+.contactPage .subpageContent .contactGuide .heading { grid-column: 1; grid-row: 1; }
+.contactPage .subpageContent .contactGuide .lead { grid-column: 1; grid-row: 2; margin: 0; }
+.contactPage .subpageContent .guideGrid { grid-column: 2; grid-row: 1 / span 3; display: block; }
+.contactPage .subpageContent .guideGrid article { min-height: 0; display: grid; grid-template-columns: 28px 1fr; column-gap: 20px; background: transparent; border: 0; border-top: 1px solid #cbdbe4; padding: 22px 0; }
+.contactPage .subpageContent .guideGrid span { grid-row: span 2; padding-top: 4px; }
+.contactPage .subpageContent .guideGrid h3 { margin: 0 0 5px; font-size: 18px; }
+.contactPage .subpageContent .guideGrid p { font-size: 14px; }
+.contactPage .subpageContent .phoneCta { grid-column: 1; grid-row: 3; margin: 32px 0 0; padding: 24px; display: block; background: #fff; color: var(--deep); }
+.contactPage .subpageContent .phoneCta small { color: var(--gray); }
+.contactPage .subpageContent .phoneCta strong { font-size: 27px; }
+.contactPage .subpageContent .phoneCta a { justify-content: space-between; margin-top: 18px; color: #fff; font-size: 13px; padding: 12px 16px; }
+
+/* Policy: readable line length and a persistent, keyboard-accessible table of contents. */
+.privacyPage .subpageContent .pageHero { background: #f5f8fb; }
+.privacyPage .subpageContent .pageHero h1 { font-size: clamp(27px,3vw,40px); }
+.privacyPage .subpageContent > .section > .wrap { display: grid; grid-template-columns: .65fr 1.35fr; gap: 0 64px; align-items: start; }
+.privacyPage .subpageContent .heading { grid-column: 1; }
+.privacyPage .subpageContent .policyNav { grid-column: 1; position: sticky; top: 32px; display: flex; flex-direction: column; border-top: 1px solid var(--line); }
+.privacyPage .subpageContent .policyNav a { padding: 14px 0; border-bottom: 1px solid var(--line); font-size: 13px; color: var(--gray); }
+.privacyPage .subpageContent .policyNav a:hover { color: var(--blue); }
+.privacyPage .subpageContent .policySections { grid-column: 2; grid-row: 1 / span 3; min-width: 0; counter-reset: policy; }
+.privacyPage .subpageContent .policyItem { scroll-margin-top: 32px; padding: 0 0 36px; margin-bottom: 36px; border-bottom: 1px solid var(--line); counter-increment: policy; }
+.privacyPage .subpageContent .policyItem .subHead { margin: 0 0 18px; font-size: 22px; line-height: 1.6; }
+.privacyPage .subpageContent .policyItem .subHead::before { content: counter(policy,decimal-leading-zero); display: block; font: 700 11px/1.5 Arial; color: var(--teal); letter-spacing: .15em; margin-bottom: 14px; }
+.privacyPage .subpageContent .policyItem p { margin: 0 0 16px; }
+.privacyPage .subpageContent .policyItem a { text-decoration: underline; text-underline-offset: 4px; overflow-wrap: anywhere; }
+
+@media (max-width: 1000px) {
+  .subpageContent .pageHero > .wrap { column-gap: 40px; }
+  .barrelPage .subpageContent #processing > .wrap { grid-template-columns: 1fr; gap: 0; }
+  .barrelPage .subpageContent #processing .heading { position: static; }
+  .barrelPage .subpageContent #equipment .equipment article { display: block; }
+  .barrelPage .subpageContent .equipment h3 { margin-bottom: 12px; }
+  .contactPage .subpageContent #contact-method > .wrap { grid-template-columns: 1fr; gap: 0; }
+  .contactPage .subpageContent .contactGuide > .wrap { column-gap: 40px; }
+  .companyPage .subpageContent .trustRefined > .wrap { grid-template-columns: 1fr 1fr; gap: 28px; }
+  .companyPage .subpageContent .trustRefined .heading { grid-column: 1 / -1; margin-bottom: 0; }
+}
+@media (max-width: 767px) {
+  .subpageContent { --space: 64px; }
+  .subpageContent .heading { gap: 8px; margin-bottom: 28px; }
+  .subpageContent .heading .ja { font-size: 25px; }
+  .subpageContent .heading .en { font-size: 10px; }
+  .subpageContent .bodyText, .subpageContent .lead { font-size: 14px; }
+  .subpageContent .pageHero > .wrap { display: block; padding: 42px 0 32px; }
+  .subpageContent .pageHero h1 { font-size: 30px; margin: 12px 0 20px; }
+  .subpageContent .pageHero p { border: 0; padding: 0; font-size: 13px; }
+  .subpageContent .breadcrumb { margin-top: 24px; font-size: 10px; }
+  .subpageContent .pageIndex { height: auto; grid-template-columns: 1fr 1fr; }
+  .subpageContent .pageIndex a { padding: 14px 10px; font-size: 11px; }
+  .subpageContent .pageIndex a:nth-child(odd) { border-left: 0; }
+  .barrelPage .subpageContent #about .split { display: flex; flex-direction: column; gap: 24px; }
+  .barrelPage .subpageContent #about .splitPhoto { aspect-ratio: 4 / 3; }
+  .barrelPage .subpageContent #about .bodyText:first-child { font-size: 16px; }
+  .barrelPage .subpageContent .strengthList { margin-top: 36px; gap: 0; }
+  .barrelPage .subpageContent .strength { display: grid; grid-template-columns: 30px 1fr; gap: 0 16px; padding: 24px 0; }
+  .barrelPage .subpageContent .strength .num { grid-row: span 2; padding-top: 6px; }
+  .barrelPage .subpageContent .strength h3 { margin: 0 0 8px; font-size: 18px; }
+  .barrelPage .subpageContent .strength p { margin: 0; }
+  .barrelPage .subpageContent .resultSection > .wrap { display: block; }
+  .barrelPage .subpageContent .beforeAfter { grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 28px; }
+  .barrelPage .subpageContent .beforeAfter figure::before { top: 8px; left: 8px; font-size: 8px; padding: 4px 6px; }
+  .barrelPage .subpageContent .beforeAfter img { aspect-ratio: 1; }
+  .barrelPage .subpageContent #processing .processItem { grid-template-columns: 28px 1fr; gap: 12px; padding: 24px 0; }
+  .barrelPage .subpageContent #processing .processItem p { grid-column: 2; }
+  .barrelPage .subpageContent #processing .processItem:last-child { padding: 24px 18px; }
+  .barrelPage .subpageContent #equipment .processGrid { grid-template-columns: 1fr; border: 0; }
+  .barrelPage .subpageContent #equipment .processItem, .barrelPage .subpageContent #equipment .processItem:first-child { border: 0; border-left: 1px solid #b9ccdb; padding: 0 0 28px 24px; margin-left: 6px; }
+  .barrelPage .subpageContent #equipment .processItem:not(:last-child)::after { content: '↓'; top: auto; bottom: 6px; right: auto; left: -8px; padding: 0; }
+  .barrelPage .subpageContent #equipment .equipment { grid-template-columns: 1fr; gap: 16px; margin: 24px 0 40px; }
+  .barrelPage .subpageContent #equipment .equipment article { padding: 24px; }
+  .barrelPage .subpageContent .gallery { grid-template-columns: 1fr 1fr; gap: 16px 12px; }
+  .barrelPage .subpageContent .gallery figure:first-child { grid-column: 1 / -1; grid-row: auto; }
+  .barrelPage .subpageContent .gallery figure:first-child img { aspect-ratio: 4 / 3; height: auto; }
+  .companyPage .subpageContent .pageHero > .wrap { display: block; padding: 42px 0 32px; }
+  .companyPage .subpageContent .companyHeroPhoto { margin-top: 28px; aspect-ratio: 16 / 9; }
+  .companyPage .subpageContent #about > .wrap, .companyPage .subpageContent .profileSection > .wrap { display: block; }
+  .companyPage .subpageContent #about .split > div { display: block; }
+  .companyPage .subpageContent #about .bodyText:first-child { font-size: 17px; margin-bottom: 20px; }
+  .companyPage .subpageContent .profile th { width: 108px; padding-right: 16px; font-size: 11px; }
+  .companyPage .subpageContent .profile td { font-size: 13px; overflow-wrap: anywhere; }
+  .companyPage .subpageContent .profile th, .companyPage .subpageContent .profile td { padding-top: 16px; padding-bottom: 16px; }
+  .companyPage .subpageContent .timeline { display: block; }
+  .companyPage .subpageContent .timeline li { padding: 0 0 32px 24px; margin-left: 5px; border-top: 0; border-left: 1px solid #b9ccdb; }
+  .companyPage .subpageContent .timeline li::before { left: -5px; top: 10px; }
+  .companyPage .subpageContent .timeline time { font-size: 25px; margin-bottom: 14px; }
+  .companyPage .subpageContent .trustRefined > .wrap { display: block; }
+  .companyPage .subpageContent .trustRefined .heading { margin-bottom: 28px; }
+  .companyPage .subpageContent .trustRefined p + p { margin-top: 24px; }
+  .companyPage .subpageContent .accessGrid { display: flex; flex-direction: column; gap: 24px; }
+  .companyPage .subpageContent .accessCard { width: 100%; }
+  .companyPage .subpageContent .accessCard h3 { margin-top: 0; }
+  .companyPage .subpageContent .mapFrame { height: 320px; }
+  .contactPage .subpageContent .infoCard { padding: 28px 22px; }
+  .contactPage .subpageContent .infoCard h3 { font-size: 17px; }
+  .contactPage .subpageContent .infoCard p { font-size: 13px; }
+  .contactPage .subpageContent .contactPhoneNumber { font-size: 30px; }
+  .contactPage .subpageContent .contactPhoneNumber[href^='mailto:'] { font-size: 20px; }
+  .contactPage .subpageContent .contactGuide > .wrap { display: flex; flex-direction: column; }
+  .contactPage .subpageContent .contactGuide .lead { margin-bottom: 32px; }
+  .contactPage .subpageContent .guideGrid { width: 100%; }
+  .contactPage .subpageContent .phoneCta { width: 100%; }
+  .privacyPage .subpageContent .pageHero h1 { font-size: 27px; }
+  .privacyPage .subpageContent > .section > .wrap { display: block; }
+  .privacyPage .subpageContent .policyNav { position: static; margin-bottom: 40px; }
+  .privacyPage .subpageContent .policyItem .subHead { font-size: 21px; }
+}
