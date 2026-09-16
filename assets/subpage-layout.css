@@ -1,0 +1,273 @@
+/* Sub-page layout system: section-by-section variation for barrel / company / contact / privacy.
+   Header, contact banner and footer are untouched; this file only shapes the content between them. */
+:root{--wide:1400px}
+.wrapWide{width:min(94%,var(--wide));margin:auto}
+.subpage .section{position:relative}
+.subpage .heading .en.compact{font-size:clamp(30px,3.6vw,44px)}
+.subpage .heading.center{text-align:center}
+.subpage .heading.center .ja{display:flex;justify-content:center;align-items:center;gap:16px}
+.subpage .heading.center .ja:before,.subpage .heading.center .ja:after{content:"";width:40px;height:1px;background:var(--teal)}
+.lead.center{margin-left:auto;margin-right:auto;text-align:center}
+.leadText{margin:0;font-family:"Noto Serif JP","Yu Mincho",serif;font-size:clamp(19px,2.1vw,25px);font-weight:600;line-height:1.85;letter-spacing:.06em;color:var(--deep);text-wrap:pretty}
+.bandTitle{display:flex;align-items:center;gap:16px;margin:0 0 40px;font-size:21px;font-weight:700;color:var(--deep);letter-spacing:.08em}
+.bandTitle:before{content:"";flex:none;width:36px;height:2px;background:var(--teal)}
+
+/* ---------- Page hero: a single English label and intro copy that wraps naturally on desktop ---------- */
+.subpage .pageHero .en{margin-top:0}
+.subpage .pageHero p{max-width:860px}
+
+/* ---------- Barrel: ABOUT — photo bleeds to the viewport edge, editorial text on the right ---------- */
+.aboutEditorialLayout{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);gap:72px;align-items:center;padding-right:max(5%,calc((100% - var(--w)) / 2))}
+.aboutEditorialPhoto{margin:0;position:relative}
+.aboutEditorialPhoto img{aspect-ratio:5 / 4;object-fit:cover}
+.aboutEditorialPhoto figcaption{position:absolute;right:0;bottom:0;background:#fff;color:var(--deep);font-size:12px;letter-spacing:.12em;padding:12px 22px}
+.aboutEditorialText .leadText{margin-bottom:26px}
+.aboutEditorialText .bodyText{margin:0 0 18px}
+
+/* ---------- Barrel: three strengths as a numbered band ---------- */
+.pointSection{background:var(--ice);padding:84px 0}
+.pointGrid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr))}
+.point{position:relative;padding:8px 40px 8px 34px;border-left:1px solid rgba(35,71,117,.18)}
+.point:first-child{padding-left:0;border-left:0}
+.point .num{display:block;font:700 54px/1 Arial,sans-serif;color:#C4D7EE;letter-spacing:-.03em}
+.point h3{margin:18px 0 10px;font-size:19px;color:var(--deep)}
+.point p{margin:0;font-size:13.5px;line-height:2;color:var(--gray)}
+
+/* ---------- Barrel: BEFORE / AFTER on a dark band with a wide comparison ---------- */
+.resultDark{background:linear-gradient(118deg,#183B67 0%,#234775 52%,#245E74 100%);color:#fff;overflow:hidden}
+.resultDark:before{content:"";position:absolute;left:-140px;bottom:-280px;width:540px;height:540px;border-radius:50%;border:1px solid rgba(255,255,255,.12);box-shadow:0 0 0 90px rgba(255,255,255,.025)}
+.resultDark .wrap,.resultDark .wrapWide{position:relative}
+.resultDark .heading .ja{color:#B8DDE2}
+.resultDark .heading .ja:before,.resultDark .heading .ja:after{background:rgba(255,255,255,.4)}
+.resultDark .heading .en{color:#fff}
+.resultDark .lead{color:rgba(255,255,255,.82)}
+.compare{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin:52px auto 0}
+.compareItem{margin:0;display:flex;flex-direction:column}
+.compareMedia{position:relative;background:#fff;padding:10px}
+.compareMedia img{aspect-ratio:4 / 3;object-fit:cover}
+.compareMedia:after{content:attr(data-label);position:absolute;top:22px;left:22px;background:rgba(23,40,61,.88);color:#fff;font:700 11px Arial,sans-serif;letter-spacing:.2em;padding:8px 13px}
+.compareItem+.compareItem .compareMedia:before{content:"→";position:absolute;z-index:3;left:-44px;top:50%;width:64px;height:64px;margin-top:-32px;border-radius:50%;background:#fff;color:var(--blue);display:grid;place-items:center;font:700 28px/1 Arial,sans-serif;box-shadow:0 10px 26px rgba(8,24,43,.3)}
+.compareItem figcaption{display:flex;align-items:baseline;gap:14px;margin-top:16px;font-size:13px;line-height:1.8;color:rgba(255,255,255,.78)}
+.compareItem figcaption strong{flex:none;font-size:15px;color:#fff;letter-spacing:.1em}
+
+/* ---------- Barrel: PROCESSING — five equal photo cards ---------- */
+.processingSection .lead{margin-bottom:44px}
+.serviceRow{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:20px}
+.serviceItem{background:#fff;border:1px solid var(--line)}
+.serviceItem figure{position:relative;margin:0}
+.serviceItem img{aspect-ratio:4 / 3;object-fit:cover}
+.serviceItem figure span{position:absolute;left:0;top:0;background:var(--deep);color:#fff;font:700 11px/1 Arial,sans-serif;letter-spacing:.14em;padding:8px 10px}
+.serviceItemBody{padding:18px 18px 22px}
+.serviceItemBody h3{margin:0 0 8px;font-size:15px;line-height:1.6;color:var(--deep)}
+.serviceItemBody h3 span{display:inline-block}
+.serviceItemBody p{margin:0;font-size:12.5px;line-height:1.9;color:var(--gray)}
+
+/* ---------- Barrel: PROCESS — a four-step flow, then the two machine types as line-art diagrams ---------- */
+.stepFlow{list-style:none;margin:0;padding:44px 0 0;position:relative;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:32px}
+.stepFlow:before{content:"";position:absolute;left:0;right:0;top:22px;height:1px;background:linear-gradient(90deg,var(--teal),var(--blue) 60%,var(--accent))}
+.stepFlow li{position:relative;padding:20px 8px 0 0}
+.stepNum{position:absolute;top:-44px;left:0;width:44px;height:44px;border-radius:50%;background:#fff;border:1px solid var(--blue);color:var(--blue);display:grid;place-items:center;font:700 13px Arial,sans-serif;letter-spacing:.08em;box-shadow:0 0 0 8px #F8FAFD}
+.stepFlow b{display:block;font-size:17px;color:var(--deep);margin:0 0 8px}
+.stepFlow p{margin:0;font-size:13.5px;line-height:2;color:var(--gray)}
+.machineGrid{display:grid;grid-template-columns:1fr 1fr;margin-top:72px;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.machine{display:grid;grid-template-columns:150px minmax(0,1fr);gap:32px;align-items:center;padding:40px 48px 40px 0}
+.machine+.machine{border-left:1px solid var(--line);padding:40px 0 40px 48px}
+.machineIcon{width:150px;height:150px;color:var(--deep)}
+.machineIcon svg{display:block;width:100%;height:100%}
+.machineEn{display:block;font:700 11px Arial,sans-serif;letter-spacing:.22em;color:var(--teal)}
+.machine h3{margin:8px 0 10px;font-size:20px;color:var(--deep)}
+.machine p{margin:0;font-size:13.5px;line-height:2;color:var(--gray)}
+
+/* ---------- Barrel: GALLERY — one photo at a time, uniform size ---------- */
+.slider{position:relative}
+.sliderTrack{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;-webkit-overflow-scrolling:touch;outline:none}
+.sliderTrack::-webkit-scrollbar{display:none}
+.sliderTrack:focus-visible{outline:2px solid var(--blue);outline-offset:4px}
+.slide{flex:0 0 100%;scroll-snap-align:start;margin:0}
+.slide img{aspect-ratio:3 / 2;object-fit:cover}
+.slide figcaption{margin-top:16px;padding-right:200px;font-size:13px;line-height:36px;letter-spacing:.08em;color:var(--gray)}
+.sliderBar{position:absolute;right:0;bottom:0;display:flex;align-items:center;gap:10px;height:36px}
+.sliderCount{margin-right:8px;font:700 12px Arial,sans-serif;letter-spacing:.12em;color:var(--deep)}
+.sliderBtn{width:36px;height:36px;padding:0;border:1px solid var(--deep);background:#fff;color:var(--deep);font:16px/1 Arial,sans-serif;cursor:pointer;display:grid;place-items:center;transition:background .2s,color .2s}
+.sliderBtn:hover{background:var(--deep);color:#fff}
+.sliderBtn:focus-visible{outline:2px solid var(--blue);outline-offset:3px}
+
+/* ---------- Company: ABOUT US — one column, every element on the same 1120px grid ---------- */
+.companyIntro .leadText{margin:0 0 36px}
+.companyIntroPhoto{margin:0;position:relative}
+.companyIntroPhoto img{aspect-ratio:16 / 7;object-fit:cover}
+.companyIntroPhoto figcaption{position:absolute;left:0;bottom:0;background:rgba(255,255,255,.94);color:var(--deep);font-size:12px;letter-spacing:.12em;padding:12px 24px}
+.companyIntroBody{margin-top:40px}
+.companyIntroBody .bodyText{margin:0 0 14px;font-size:15px;line-height:2.1}
+.companyIntroBody .bodyText:last-child{margin-bottom:0}
+
+/* ---------- Company: PROFILE — heading and factory photo beside a single clean table ---------- */
+.profileLayout{display:grid;grid-template-columns:minmax(0,.38fr) minmax(0,.62fr);gap:64px;align-items:start}
+.profileSide .heading{margin-bottom:32px}
+.profilePhoto{margin:0;position:relative}
+.profilePhoto img{aspect-ratio:4 / 3;object-fit:cover}
+.profilePhoto figcaption{margin-top:10px;font-size:12px;letter-spacing:.1em;color:var(--gray)}
+.companyPage .profileTable{box-shadow:none;background:transparent}
+.companyPage .profileTable th,.companyPage .profileTable td{padding:20px 8px;border:0;border-bottom:1px solid rgba(35,71,117,.18);background:transparent;vertical-align:top}
+.companyPage .profileTable tr:first-child th,.companyPage .profileTable tr:first-child td{border-top:1px solid rgba(35,71,117,.18)}
+.companyPage .profileTable th{width:160px;font-size:14px;letter-spacing:.1em;color:var(--deep)}
+.companyPage .profileTable td{font-size:14.5px;color:var(--dark)}
+
+/* ---------- Company: HISTORY — a horizontal timeline ---------- */
+.historySection{overflow:hidden}
+.historySection:before{content:"SINCE 1972";position:absolute;right:-10px;top:56px;font:700 clamp(80px,12vw,180px)/1 Arial,sans-serif;color:rgba(86,82,163,.05);letter-spacing:-.05em;pointer-events:none;white-space:nowrap}
+.historySection .wrap{position:relative}
+.historyFlow{list-style:none;margin:16px 0 0;padding:44px 0 0;position:relative;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:48px}
+.historyFlow:before{content:"";position:absolute;left:0;right:0;top:0;height:1px;background:linear-gradient(90deg,var(--teal),var(--blue) 55%,var(--accent))}
+.historyFlow li{position:relative}
+.historyFlow li:before{content:"";position:absolute;left:0;top:-50px;width:12px;height:12px;border-radius:50%;background:var(--blue);border:3px solid #fff;box-shadow:0 0 0 1px var(--blue)}
+.historyFlow .year{display:block;font:700 clamp(36px,4vw,52px)/1 Arial,sans-serif;color:var(--blue);letter-spacing:-.01em}
+.historyFlow .year.jp{font-family:"Noto Serif JP","Yu Mincho",serif;font-size:clamp(26px,3vw,34px);font-weight:600;letter-spacing:.06em;line-height:1.3;color:var(--deep)}
+.historyFlow .year small{font-size:.42em;margin-left:2px}
+.historyFlow strong{display:block;margin:18px 0 10px;font-size:18px;color:var(--deep)}
+.historyFlow p{margin:0;font-size:14px;line-height:2.05;color:var(--gray)}
+
+/* ---------- Company: TRUST — copy on the left, photo fading in from the right ---------- */
+.trustSplit{overflow:hidden;min-height:520px;display:flex;align-items:center}
+.trustSplit .trustPhoto{position:absolute;right:0;top:0;width:46%;height:100%;object-fit:cover;opacity:.5;-webkit-mask-image:linear-gradient(90deg,transparent,#000 35%);mask-image:linear-gradient(90deg,transparent,#000 35%)}
+.trustSplit .wrap{position:relative;z-index:1}
+.trustLayout{max-width:600px}
+.trustLayout .heading{margin-bottom:28px}
+.trustLayout p{margin:0 0 16px;font-size:14.5px;line-height:2.15;color:#E7EFF8}
+.trustTags{list-style:none;display:flex;flex-wrap:wrap;align-items:center;gap:10px;margin:26px 0 0;padding:24px 0 0;border-top:1px solid rgba(255,255,255,.22)}
+.trustTags li{font-size:12px;letter-spacing:.1em;color:#fff;border:1px solid rgba(255,255,255,.4);padding:6px 14px}
+.trustTags li:first-child{border:0;padding-left:0;color:#B8E0E4;font-weight:700}
+
+/* ---------- Company: ACCESS — full-width map with a floating address card ---------- */
+.accessMap{position:relative;margin-top:8px}
+.accessMap .mapFrame{height:540px;display:block}
+.accessMap .accessCard{position:absolute;left:40px;bottom:40px;width:min(380px,calc(100% - 80px));z-index:2}
+.accessCard h3{margin:0 0 12px;font-size:19px;color:var(--deep)}
+.accessCard p{margin:0 0 10px;font-size:14px}
+.accessCard .bodyText{font-size:13px}
+
+/* ---------- Contact: header CTA stays readable while marked current ---------- */
+.contactPage .nav .cta.current{background:var(--deep);color:#fff;box-shadow:inset 0 -3px 0 rgba(255,255,255,.6)}
+
+/* ---------- Contact: INFORMATION — two equal cards, each with one clear action ---------- */
+.channelCards{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.channelCard{display:flex;flex-direction:column;gap:12px;padding:40px 40px 32px;background:#fff;border:1px solid var(--line)}
+.channelTag{font:700 11px Arial,sans-serif;letter-spacing:.24em;color:var(--teal)}
+.channelCard h3{margin:0;font-size:17px;color:var(--deep)}
+.channelValue{display:inline-block;font:700 clamp(26px,3vw,38px)/1.3 Arial,sans-serif;letter-spacing:.02em;color:var(--blue);overflow-wrap:anywhere}
+.channelValue[href^="mailto:"]{font-size:clamp(20px,2.2vw,28px)}
+.channelValue:focus-visible{outline:2px solid var(--blue);outline-offset:4px}
+.channelCard p{flex:1;margin:0;font-size:13.5px;line-height:2;color:var(--gray)}
+.channelAction{display:flex;justify-content:space-between;align-items:center;margin-top:10px;padding:16px 22px;background:var(--deep);color:#fff;font-size:14px;font-weight:700;transition:background .2s}
+.channelAction:hover{background:var(--blue)}
+.channelAction:focus-visible{outline:2px solid var(--blue);outline-offset:3px}
+
+/* ---------- Contact: GUIDE — six numbered items on a three-column rule grid ---------- */
+.contactPage .contactGuide{background:var(--off)}
+.contactGuide .lead{margin-bottom:40px}
+.guideList{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0 40px;border-top:1px solid rgba(35,71,117,.18)}
+.guideList li{display:grid;grid-template-columns:32px minmax(0,1fr);gap:4px 12px;align-items:baseline;padding:22px 0;border-bottom:1px solid rgba(35,71,117,.14)}
+.guideList span{font:700 12px/1.8 Arial,sans-serif;color:var(--teal);letter-spacing:.14em}
+.guideList h3{margin:0;font-size:15px;color:var(--deep)}
+.guideList p{grid-column:2;margin:0;font-size:12.5px;line-height:1.9;color:var(--gray)}
+
+/* ---------- Privacy: index on the left, numbered articles on the right ---------- */
+.privacyLayout{display:grid;grid-template-columns:minmax(0,.36fr) minmax(0,.64fr);gap:72px;align-items:start}
+.privacyNav{position:sticky;top:40px}
+.privacyNav .heading{margin-bottom:26px}
+.privacyNav nav{display:grid;border-top:1px solid var(--line)}
+.privacyNav nav a{display:flex;gap:14px;align-items:baseline;padding:12px 0;border-bottom:1px solid var(--line);font-size:13px;font-weight:700;color:var(--deep)}
+.privacyNav nav a span{font:700 11px Arial,sans-serif;color:var(--teal);letter-spacing:.14em}
+.privacyNav nav a:hover{color:var(--blue)}
+.privacyBody article{padding:0 0 36px;margin-bottom:36px;border-bottom:1px solid var(--line);scroll-margin-top:24px}
+.privacyBody article:last-of-type{border-bottom:0;margin-bottom:0;padding-bottom:0}
+.privacyBody h2{display:flex;align-items:baseline;gap:16px;margin:0 0 14px;font-size:19px;color:var(--deep)}
+.privacyBody h2 span{font:700 12px Arial,sans-serif;color:var(--teal);letter-spacing:.14em}
+.privacyBody .bodyText{margin:0 0 12px}
+.privacyContact{display:grid;gap:8px;margin-top:18px;padding:22px 26px;background:var(--ice);font-size:14px}
+.privacyContact a{color:var(--blue);font-weight:700}
+.privacyContact span{font:700 11px Arial,sans-serif;letter-spacing:.2em;color:var(--teal);margin-right:12px}
+
+@media(max-width:1024px){
+ .aboutEditorialLayout{gap:40px}
+ .serviceRow{grid-template-columns:1fr;gap:0;border-top:1px solid var(--line)}
+ .serviceItem{display:grid;grid-template-columns:200px minmax(0,1fr);gap:24px;align-items:center;border:0;border-bottom:1px solid var(--line);padding:20px 0}
+ .serviceItemBody{padding:0}
+ .serviceItemBody h3{font-size:16px}
+ .serviceItemBody p{font-size:13px}
+ .stepFlow{grid-template-columns:1fr 1fr;gap:36px 32px;padding-top:0}
+ .stepFlow:before{display:none}
+ .stepFlow li{padding-top:0}
+ .stepNum{position:static;margin-bottom:14px;box-shadow:none}
+ .machineGrid{grid-template-columns:1fr}
+ .machine,.machine+.machine{padding:32px 0;border-left:0}
+ .machine+.machine{border-top:1px solid var(--line)}
+ .profileLayout{grid-template-columns:1fr;gap:32px}
+ .profilePhoto{max-width:520px}
+ .historyFlow{gap:32px}
+ .guideList{grid-template-columns:1fr 1fr}
+ .privacyLayout{grid-template-columns:1fr;gap:40px}
+ .privacyNav{position:static}
+}
+@media(max-width:767px){
+ .wrapWide{width:min(90%,var(--wide))}
+ .leadText{font-size:19px}
+ .bandTitle{font-size:18px;margin-bottom:28px}
+ .aboutEditorialLayout{grid-template-columns:1fr;gap:28px;padding:0;width:90%;margin:auto}
+ .aboutEditorialPhoto img{aspect-ratio:4 / 3}
+ .aboutEditorialPhoto figcaption{font-size:11px;padding:8px 14px}
+ .pointSection{padding:56px 0}
+ .pointGrid{grid-template-columns:1fr}
+ .point{padding:22px 0;border-left:0;border-top:1px solid rgba(35,71,117,.18)}
+ .point:first-child{border-top:0;padding-top:0}
+ .point .num{font-size:40px}
+ .compare{grid-template-columns:1fr;gap:64px;margin-top:36px}
+ .compareMedia{padding:8px}
+ .compareMedia:after{top:18px;left:18px}
+ .compareItem+.compareItem .compareMedia:before{left:50%;top:-32px;margin:-32px 0 0 -32px;transform:rotate(90deg)}
+ .serviceItem{grid-template-columns:112px minmax(0,1fr);gap:16px;padding:16px 0}
+ .serviceItem figure span{font-size:10px;padding:6px 8px}
+ .serviceItemBody h3{font-size:15px;margin-bottom:4px}
+ .serviceItemBody p{font-size:12px;line-height:1.8}
+ .stepFlow{grid-template-columns:1fr;gap:28px}
+ .machineGrid{margin-top:44px}
+ .machine,.machine+.machine{grid-template-columns:96px minmax(0,1fr);gap:20px;padding:26px 0}
+ .machineIcon{width:96px;height:96px}
+ .machine h3{font-size:18px;margin:6px 0 8px}
+ .slide img{aspect-ratio:4 / 3}
+ .slide figcaption{padding-right:150px;font-size:12px;line-height:34px;margin-top:12px}
+ .sliderBar{height:34px}
+ .sliderBtn{width:34px;height:34px}
+ .companyIntro .leadText{margin-bottom:24px}
+ .companyIntroPhoto img{aspect-ratio:4 / 3}
+ .companyIntroPhoto figcaption{font-size:11px;padding:8px 14px}
+ .companyIntroBody{margin-top:28px}
+ .companyIntroBody .bodyText{font-size:14.5px;line-height:2}
+ .profileLayout{gap:28px}
+ .profilePhoto img{aspect-ratio:16 / 10}
+ .companyPage .profileTable th{width:100px;font-size:13px}
+ .companyPage .profileTable th,.companyPage .profileTable td{padding:14px 4px}
+ .historySection:before{font-size:72px;top:30px}
+ .historyFlow{grid-template-columns:1fr;gap:0;padding:0 0 0 28px;margin-top:8px}
+ .historyFlow:before{left:5px;right:auto;top:8px;bottom:8px;width:1px;height:auto;background:linear-gradient(var(--teal),var(--blue),var(--accent))}
+ .historyFlow li{padding:0 0 32px}
+ .historyFlow li:last-child{padding-bottom:0}
+ .historyFlow li:before{left:-28px;top:10px}
+ .historyFlow .year{font-size:32px}
+ .historyFlow .year.jp{font-size:24px}
+ .historyFlow strong{margin:10px 0 6px;font-size:16px}
+ .trustSplit{min-height:0}
+ .trustSplit .trustPhoto{width:100%;opacity:.16;-webkit-mask-image:none;mask-image:none}
+ .accessMap .mapFrame{height:320px}
+ .accessMap .accessCard{position:static;width:auto;margin-top:12px}
+ .channelCards{grid-template-columns:1fr;gap:14px}
+ .channelCard{padding:26px 22px 22px;gap:10px}
+ .channelValue{font-size:28px}
+ .channelValue[href^="mailto:"]{font-size:clamp(17px,5vw,22px)}
+ .channelAction{padding:14px 18px;font-size:13px}
+ .contactGuide .lead{margin-bottom:28px}
+ .guideList{grid-template-columns:1fr}
+ .guideList li{padding:16px 0}
+ .privacyLayout{gap:32px}
+ .privacyBody article{padding-bottom:26px;margin-bottom:26px}
+}
