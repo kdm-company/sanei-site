@@ -15,6 +15,11 @@
 /* ---------- Page hero: a single English label and intro copy that wraps naturally on desktop ---------- */
 .subpage .pageHero .en{margin-top:0}
 .subpage .pageHero p{max-width:860px}
+.pageHero p br.pc{display:none}
+@media(min-width:1025px){
+ .subpage .pageHero p{max-width:none}
+ .pageHero p br.pc{display:inline}
+}
 
 /* ---------- Barrel: ABOUT — photo bleeds to the viewport edge, editorial text on the right ---------- */
 .aboutEditorialLayout{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);gap:72px;align-items:center;padding-right:max(5%,calc((100% - var(--w)) / 2))}
