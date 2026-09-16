@@ -216,25 +216,39 @@
 }
 @media(max-width:767px){
  .wrapWide{width:min(90%,var(--wide))}
- .leadText{font-size:19px}
- .bandTitle{font-size:18px;margin-bottom:28px}
+ .subpage .pageHero p{font-size:13px;line-height:1.9}
+ .leadText{font-size:17px;line-height:1.8}
+ .aboutEditorialText .bodyText{font-size:14px;line-height:2}
+ .bandTitle{display:block;font-size:17px;margin-bottom:20px}
+ .bandTitle:before{display:none}
  .aboutEditorialLayout{grid-template-columns:1fr;gap:28px;padding:0;width:90%;margin:auto}
  .aboutEditorialPhoto img{aspect-ratio:4 / 3}
  .aboutEditorialPhoto figcaption{font-size:11px;padding:8px 14px}
  .pointSection{padding:56px 0}
  .pointGrid{grid-template-columns:1fr}
- .point{padding:22px 0;border-left:0;border-top:1px solid rgba(35,71,117,.18)}
+ .point{display:grid;grid-template-columns:32px minmax(0,1fr);gap:6px 12px;align-items:baseline;padding:20px 0;border-left:0;border-top:1px solid rgba(35,71,117,.18)}
  .point:first-child{border-top:0;padding-top:0}
- .point .num{font-size:40px}
- .compare{grid-template-columns:1fr;gap:64px;margin-top:36px}
- .compareMedia{padding:8px}
- .compareMedia:after{top:18px;left:18px}
- .compareItem+.compareItem .compareMedia:before{left:50%;top:-32px;margin:-32px 0 0 -32px;transform:rotate(90deg)}
- .serviceItem{grid-template-columns:112px minmax(0,1fr);gap:16px;padding:16px 0}
- .serviceItem figure span{font-size:10px;padding:6px 8px}
- .serviceItemBody h3{font-size:15px;margin-bottom:4px}
- .serviceItemBody p{font-size:12px;line-height:1.8}
- .stepFlow{grid-template-columns:1fr;gap:28px}
+ .point .num{font-size:12px;line-height:1.8;color:var(--teal);letter-spacing:.14em}
+ .point h3{margin:0;font-size:16px}
+ .point p{grid-column:2;font-size:13px;line-height:1.9}
+ .resultDark .heading .en{font-size:38px}
+ .compare{grid-template-columns:1fr;gap:56px;margin-top:32px}
+ .compareMedia{padding:0}
+ .compareMedia:after{top:12px;left:12px;font-size:10px;padding:6px 10px}
+ .compareItem+.compareItem .compareMedia:before{left:50%;top:-28px;width:48px;height:48px;margin:-24px 0 0 -24px;font-size:22px;transform:rotate(90deg)}
+ .compareItem figcaption{flex-direction:column;gap:2px;margin-top:12px;font-size:12px}
+ .compareItem figcaption strong{font-size:14px}
+ .serviceRow{counter-reset:svc}
+ .serviceItem{counter-increment:svc;grid-template-columns:104px minmax(0,1fr);gap:16px;align-items:start;padding:18px 0}
+ .serviceItem figure span{display:none}
+ .serviceItemBody h3{font-size:15px;margin:0 0 6px}
+ .serviceItemBody h3:before{content:counter(svc,decimal-leading-zero);display:block;margin-bottom:4px;font:700 11px/1 Arial,sans-serif;letter-spacing:.14em;color:var(--teal)}
+ .serviceItemBody p{font-size:12.5px;line-height:1.8}
+ .stepFlow{grid-template-columns:1fr;gap:22px}
+ .stepFlow li{display:grid;grid-template-columns:44px minmax(0,1fr);gap:2px 16px;align-items:start}
+ .stepNum{margin:0;grid-row:1 / span 2}
+ .stepFlow b{font-size:16px;margin:0;line-height:44px}
+ .stepFlow p{grid-column:2;font-size:13px;line-height:1.9}
  .machineGrid{margin-top:44px}
  .machine,.machine+.machine{grid-template-columns:96px minmax(0,1fr);gap:20px;padding:26px 0}
  .machineIcon{width:96px;height:96px}
@@ -250,9 +264,9 @@
  .companyIntroBody .bodyText{font-size:14.5px;line-height:2}
  .profileLayout{gap:28px}
  .profilePhoto img{aspect-ratio:16 / 10}
- .companyPage .profileTable th{width:100px;font-size:13px}
+ .companyPage .profileTable th{width:118px;font-size:12.5px;letter-spacing:.04em}
  .companyPage .profileTable th,.companyPage .profileTable td{padding:14px 4px}
- .historySection:before{font-size:72px;top:30px}
+ .historySection:before{display:none}
  .historyFlow{grid-template-columns:1fr;gap:0;padding:0 0 0 28px;margin-top:8px}
  .historyFlow:before{left:5px;right:auto;top:8px;bottom:8px;width:1px;height:auto;background:linear-gradient(var(--teal),var(--blue),var(--accent))}
  .historyFlow li{padding:0 0 32px}
