@@ -27,6 +27,7 @@
 .historyLink{display:inline-flex;align-items:center;gap:38px;color:var(--blue);font-size:13px;font-weight:700;margin-top:28px;border-bottom:1px solid var(--light);padding-bottom:8px}
 .historyLink:hover{color:var(--deep)}
 .contactBanner.contactFrame{padding:58px 5%;gap:38px}
+.contactFrame .bannerCopy{margin:-20px auto 0;color:#fff;font-size:13px}
 .contactFrame h2{position:relative;z-index:1;font-family:"Noto Sans JP",Meiryo,sans-serif;font-size:clamp(20px,2.6vw,29px);line-height:1.7;letter-spacing:.08em}
 .contactFrameGrid{width:100%;display:grid;grid-template-columns:1fr 1fr;gap:28px;position:relative;z-index:1}
 .contactFrameMail,.contactFramePhone{min-height:158px;padding:26px 20px;display:flex;align-items:center;justify-content:center}
