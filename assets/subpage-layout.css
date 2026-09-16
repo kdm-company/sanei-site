@@ -12,6 +12,10 @@
 .bandTitle{display:flex;align-items:center;gap:16px;margin:0 0 40px;font-size:21px;font-weight:700;color:var(--deep);letter-spacing:.08em}
 .bandTitle:before{content:"";flex:none;width:36px;height:2px;background:var(--teal)}
 
+/* ---------- Page hero: a single English label and intro copy that wraps naturally on desktop ---------- */
+.subpage .pageHero .en{margin-top:0}
+.subpage .pageHero p{max-width:860px}
+
 /* ---------- Barrel: ABOUT — photo bleeds to the viewport edge, editorial text on the right ---------- */
 .aboutEditorialLayout{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);gap:72px;align-items:center;padding-right:max(5%,calc((100% - var(--w)) / 2))}
 .aboutEditorialPhoto{margin:0;position:relative}
@@ -46,51 +50,56 @@
 .compareItem figcaption{display:flex;align-items:baseline;gap:14px;margin-top:16px;font-size:13px;line-height:1.8;color:rgba(255,255,255,.78)}
 .compareItem figcaption strong{flex:none;font-size:15px;color:#fff;letter-spacing:.1em}
 
-/* ---------- Barrel: PROCESSING — photo cards for each treatment, small-lot notice as a band ---------- */
+/* ---------- Barrel: PROCESSING — five equal photo cards ---------- */
 .processingSection .lead{margin-bottom:44px}
-.serviceCards{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:24px}
+.serviceRow{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:20px}
 .serviceItem{background:#fff;border:1px solid var(--line)}
 .serviceItem figure{position:relative;margin:0}
 .serviceItem img{aspect-ratio:4 / 3;object-fit:cover}
-.serviceItem figure span{position:absolute;left:0;top:0;background:var(--deep);color:#fff;font:700 12px/1 Arial,sans-serif;letter-spacing:.14em;padding:9px 12px}
-.serviceItemBody{padding:22px 22px 26px}
-.serviceItemBody h3{margin:0 0 10px;font-size:17px;line-height:1.6;color:var(--deep)}
-.serviceItemBody p{margin:0;font-size:13px;line-height:1.95;color:var(--gray)}
-.smallLot{display:grid;grid-template-columns:260px minmax(0,1fr);gap:32px;align-items:center;margin-top:24px;padding:30px 36px;background:var(--deep);color:#fff}
-.smallLotLabel{display:flex;align-items:center;gap:16px;font-size:20px;font-weight:700;letter-spacing:.08em}
-.smallLotLabel span{font:700 12px/1 Arial,sans-serif;letter-spacing:.14em;color:#B8DDE2;border:1px solid rgba(255,255,255,.4);padding:8px 10px}
-.smallLot p{margin:0;font-size:13.5px;line-height:2;color:rgba(255,255,255,.86)}
+.serviceItem figure span{position:absolute;left:0;top:0;background:var(--deep);color:#fff;font:700 11px/1 Arial,sans-serif;letter-spacing:.14em;padding:8px 10px}
+.serviceItemBody{padding:18px 18px 22px}
+.serviceItemBody h3{margin:0 0 8px;font-size:15px;line-height:1.6;color:var(--deep)}
+.serviceItemBody h3 span{display:inline-block}
+.serviceItemBody p{margin:0;font-size:12.5px;line-height:1.9;color:var(--gray)}
 
-/* ---------- Barrel: PROCESS — a four-step flow, then two machine panels ---------- */
+/* ---------- Barrel: PROCESS — a four-step flow, then the two machine types as line-art diagrams ---------- */
 .stepFlow{list-style:none;margin:0;padding:44px 0 0;position:relative;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:32px}
 .stepFlow:before{content:"";position:absolute;left:0;right:0;top:22px;height:1px;background:linear-gradient(90deg,var(--teal),var(--blue) 60%,var(--accent))}
 .stepFlow li{position:relative;padding:20px 8px 0 0}
 .stepNum{position:absolute;top:-44px;left:0;width:44px;height:44px;border-radius:50%;background:#fff;border:1px solid var(--blue);color:var(--blue);display:grid;place-items:center;font:700 13px Arial,sans-serif;letter-spacing:.08em;box-shadow:0 0 0 8px #F8FAFD}
 .stepFlow b{display:block;font-size:17px;color:var(--deep);margin:0 0 8px}
 .stepFlow p{margin:0;font-size:13.5px;line-height:2;color:var(--gray)}
-.machineGrid{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:72px}
-.machine{position:relative;overflow:hidden;background:#fff;padding:36px 40px 84px;border-top:3px solid var(--blue);box-shadow:0 12px 34px rgba(35,71,117,.07)}
-.machine:nth-child(2){border-top-color:var(--teal)}
-.machineEn{position:absolute;right:-4px;bottom:-12px;font:700 56px/1 Arial,sans-serif;color:rgba(56,116,188,.06);letter-spacing:-.02em;pointer-events:none}
-.machine h3{margin:0 0 10px;font-size:21px;color:var(--deep)}
-.machine p{margin:0;font-size:14px;line-height:2;color:var(--gray)}
+.machineGrid{display:grid;grid-template-columns:1fr 1fr;margin-top:72px;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.machine{display:grid;grid-template-columns:150px minmax(0,1fr);gap:32px;align-items:center;padding:40px 48px 40px 0}
+.machine+.machine{border-left:1px solid var(--line);padding:40px 0 40px 48px}
+.machineIcon{width:150px;height:150px;color:var(--deep)}
+.machineIcon svg{display:block;width:100%;height:100%}
+.machineEn{display:block;font:700 11px Arial,sans-serif;letter-spacing:.22em;color:var(--teal)}
+.machine h3{margin:8px 0 10px;font-size:20px;color:var(--deep)}
+.machine p{margin:0;font-size:13.5px;line-height:2;color:var(--gray)}
 
-/* ---------- Barrel: GALLERY — one large photo with four supporting shots ---------- */
-.galleryMosaic{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin:8px auto 0}
-.galleryMosaic figure{margin:0;position:relative;overflow:hidden;display:grid}
-.galleryMosaic figure:first-child{grid-column:span 2;grid-row:span 2}
-.galleryMosaic img{width:100%;height:100%;object-fit:cover;aspect-ratio:4 / 3}
-.galleryMosaic figure:first-child img{aspect-ratio:auto}
-.galleryMosaic figcaption{position:absolute;left:0;right:0;bottom:0;padding:34px 16px 12px;background:linear-gradient(transparent,rgba(23,40,61,.72));color:#fff;font-size:11px;letter-spacing:.12em}
+/* ---------- Barrel: GALLERY — one photo at a time, uniform size ---------- */
+.slider{position:relative}
+.sliderTrack{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;-webkit-overflow-scrolling:touch;outline:none}
+.sliderTrack::-webkit-scrollbar{display:none}
+.sliderTrack:focus-visible{outline:2px solid var(--blue);outline-offset:4px}
+.slide{flex:0 0 100%;scroll-snap-align:start;margin:0}
+.slide img{aspect-ratio:3 / 2;object-fit:cover}
+.slide figcaption{margin-top:16px;padding-right:200px;font-size:13px;line-height:36px;letter-spacing:.08em;color:var(--gray)}
+.sliderBar{position:absolute;right:0;bottom:0;display:flex;align-items:center;gap:10px;height:36px}
+.sliderCount{margin-right:8px;font:700 12px Arial,sans-serif;letter-spacing:.12em;color:var(--deep)}
+.sliderBtn{width:36px;height:36px;padding:0;border:1px solid var(--deep);background:#fff;color:var(--deep);font:16px/1 Arial,sans-serif;cursor:pointer;display:grid;place-items:center;transition:background .2s,color .2s}
+.sliderBtn:hover{background:var(--deep);color:#fff}
+.sliderBtn:focus-visible{outline:2px solid var(--blue);outline-offset:3px}
 
-/* ---------- Company: ABOUT US — heading + statement, wide photo, three-column body ---------- */
-.companyIntroHead{display:grid;grid-template-columns:minmax(0,.45fr) minmax(0,.55fr);gap:48px;align-items:end;margin-bottom:44px}
-.companyIntroHead .heading{margin-bottom:0}
-.companyIntroPhoto{margin:0 auto;position:relative}
+/* ---------- Company: ABOUT US — one column, every element on the same 1120px grid ---------- */
+.companyIntro .leadText{margin:0 0 36px}
+.companyIntroPhoto{margin:0;position:relative}
 .companyIntroPhoto img{aspect-ratio:16 / 7;object-fit:cover}
 .companyIntroPhoto figcaption{position:absolute;left:0;bottom:0;background:rgba(255,255,255,.94);color:var(--deep);font-size:12px;letter-spacing:.12em;padding:12px 24px}
-.companyIntroBody{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:40px;margin-top:52px}
-.companyIntroBody .bodyText{margin:0;padding-top:22px;border-top:1px solid var(--line);font-size:14px}
+.companyIntroBody{margin-top:40px}
+.companyIntroBody .bodyText{margin:0 0 14px;font-size:15px;line-height:2.1}
+.companyIntroBody .bodyText:last-child{margin-bottom:0}
 
 /* ---------- Company: PROFILE — heading and factory photo beside a single clean table ---------- */
 .profileLayout{display:grid;grid-template-columns:minmax(0,.38fr) minmax(0,.62fr);gap:64px;align-items:start}
@@ -137,33 +146,30 @@
 .accessCard p{margin:0 0 10px;font-size:14px}
 .accessCard .bodyText{font-size:13px}
 
-/* ---------- Contact: INFORMATION — phone as the primary dark row, mail as the secondary row ---------- */
-.channelList{display:grid;gap:20px}
-.channel{display:grid;grid-template-columns:220px minmax(0,1fr) minmax(0,1fr);gap:32px;align-items:center;padding:40px 44px}
-.channelPhone{background:linear-gradient(118deg,#1E4373 0%,#234775 50%,#256A7C 100%);color:#fff;box-shadow:0 18px 40px -20px rgba(23,40,61,.5)}
-.channelMail{background:#fff;border:1px solid var(--line)}
-.channelLabel{display:flex;flex-direction:column;gap:8px;font-size:15px;font-weight:700;line-height:1.6}
-.channelLabel span{font:700 11px Arial,sans-serif;letter-spacing:.24em;color:var(--teal)}
-.channelPhone .channelLabel span{color:#B8DDE2}
-.channelValue{display:inline-block;font:700 clamp(28px,3.4vw,44px)/1.3 Arial,sans-serif;letter-spacing:.02em;color:var(--blue)}
-.channelPhone .channelValue{color:#fff}
-.channelMail .channelValue{font-size:clamp(19px,2.2vw,26px);overflow-wrap:anywhere}
-.channelValue:focus-visible{outline:2px solid currentColor;outline-offset:4px}
-.channel p{margin:0;font-size:13.5px;line-height:2;color:var(--gray)}
-.channelPhone p{color:rgba(255,255,255,.84)}
-.channelMail .infoLink{margin-top:14px;padding-top:10px}
+/* ---------- Contact: header CTA stays readable while marked current ---------- */
+.contactPage .nav .cta.current{background:var(--deep);color:#fff;box-shadow:inset 0 -3px 0 rgba(255,255,255,.6)}
 
-/* ---------- Contact: GUIDE — intro and photo on the left, two-column checklist on the right ---------- */
-.guideLayout{display:grid;grid-template-columns:minmax(0,.42fr) minmax(0,.58fr);gap:64px;align-items:start}
-.guideIntro .heading{margin-bottom:22px}
-.contactGuide .guideIntro .lead{margin:0 0 30px;font-size:14px}
-.guidePhoto{aspect-ratio:3 / 2;object-fit:cover;box-shadow:16px 16px 0 #E3ECF6}
-.checkList{list-style:none;margin:0;padding:0;border-top:1px solid rgba(35,71,117,.18)}
-.checkList li{display:grid;grid-template-columns:36px 200px minmax(0,1fr);gap:14px 20px;align-items:baseline;padding:25px 0;border-bottom:1px solid rgba(35,71,117,.14)}
-.checkList span{font:700 12px/2 Arial,sans-serif;color:var(--teal);letter-spacing:.14em}
-.checkList h3{margin:0;font-size:16px;color:var(--deep)}
-.checkList p{margin:0;font-size:13px;color:var(--gray);line-height:1.9}
-.guideSplit .phoneCta{margin-top:56px}
+/* ---------- Contact: INFORMATION — two equal cards, each with one clear action ---------- */
+.channelCards{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.channelCard{display:flex;flex-direction:column;gap:12px;padding:40px 40px 32px;background:#fff;border:1px solid var(--line)}
+.channelTag{font:700 11px Arial,sans-serif;letter-spacing:.24em;color:var(--teal)}
+.channelCard h3{margin:0;font-size:17px;color:var(--deep)}
+.channelValue{display:inline-block;font:700 clamp(26px,3vw,38px)/1.3 Arial,sans-serif;letter-spacing:.02em;color:var(--blue);overflow-wrap:anywhere}
+.channelValue[href^="mailto:"]{font-size:clamp(20px,2.2vw,28px)}
+.channelValue:focus-visible{outline:2px solid var(--blue);outline-offset:4px}
+.channelCard p{flex:1;margin:0;font-size:13.5px;line-height:2;color:var(--gray)}
+.channelAction{display:flex;justify-content:space-between;align-items:center;margin-top:10px;padding:16px 22px;background:var(--deep);color:#fff;font-size:14px;font-weight:700;transition:background .2s}
+.channelAction:hover{background:var(--blue)}
+.channelAction:focus-visible{outline:2px solid var(--blue);outline-offset:3px}
+
+/* ---------- Contact: GUIDE — six numbered items on a three-column rule grid ---------- */
+.contactPage .contactGuide{background:var(--off)}
+.contactGuide .lead{margin-bottom:40px}
+.guideList{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0 40px;border-top:1px solid rgba(35,71,117,.18)}
+.guideList li{display:grid;grid-template-columns:32px minmax(0,1fr);gap:4px 12px;align-items:baseline;padding:22px 0;border-bottom:1px solid rgba(35,71,117,.14)}
+.guideList span{font:700 12px/1.8 Arial,sans-serif;color:var(--teal);letter-spacing:.14em}
+.guideList h3{margin:0;font-size:15px;color:var(--deep)}
+.guideList p{grid-column:2;margin:0;font-size:12.5px;line-height:1.9;color:var(--gray)}
 
 /* ---------- Privacy: index on the left, numbered articles on the right ---------- */
 .privacyLayout{display:grid;grid-template-columns:minmax(0,.36fr) minmax(0,.64fr);gap:72px;align-items:start}
@@ -183,19 +189,23 @@
 .privacyContact span{font:700 11px Arial,sans-serif;letter-spacing:.2em;color:var(--teal);margin-right:12px}
 
 @media(max-width:1024px){
- .profileLayout{grid-template-columns:1fr;gap:32px}
- .profilePhoto{max-width:520px}
  .aboutEditorialLayout{gap:40px}
- .serviceCards{grid-template-columns:1fr 1fr}
+ .serviceRow{grid-template-columns:1fr;gap:0;border-top:1px solid var(--line)}
+ .serviceItem{display:grid;grid-template-columns:200px minmax(0,1fr);gap:24px;align-items:center;border:0;border-bottom:1px solid var(--line);padding:20px 0}
+ .serviceItemBody{padding:0}
+ .serviceItemBody h3{font-size:16px}
+ .serviceItemBody p{font-size:13px}
  .stepFlow{grid-template-columns:1fr 1fr;gap:36px 32px;padding-top:0}
  .stepFlow:before{display:none}
  .stepFlow li{padding-top:0}
  .stepNum{position:static;margin-bottom:14px;box-shadow:none}
- .companyIntroBody{grid-template-columns:1fr 1fr}
+ .machineGrid{grid-template-columns:1fr}
+ .machine,.machine+.machine{padding:32px 0;border-left:0}
+ .machine+.machine{border-top:1px solid var(--line)}
+ .profileLayout{grid-template-columns:1fr;gap:32px}
+ .profilePhoto{max-width:520px}
  .historyFlow{gap:32px}
- .channel{grid-template-columns:180px minmax(0,1fr);gap:20px 32px}
- .channel>p,.channel>div:last-child{grid-column:2}
- .guideLayout{grid-template-columns:1fr;gap:40px}
+ .guideList{grid-template-columns:1fr 1fr}
  .privacyLayout{grid-template-columns:1fr;gap:40px}
  .privacyNav{position:static}
 }
@@ -215,22 +225,25 @@
  .compareMedia{padding:8px}
  .compareMedia:after{top:18px;left:18px}
  .compareItem+.compareItem .compareMedia:before{left:50%;top:-32px;margin:-32px 0 0 -32px;transform:rotate(90deg)}
- .serviceCards{grid-template-columns:1fr;gap:14px}
- .serviceItemBody{padding:18px 18px 22px}
- .smallLot{grid-template-columns:1fr;gap:12px;padding:24px 20px}
- .smallLotLabel{font-size:18px}
+ .serviceItem{grid-template-columns:112px minmax(0,1fr);gap:16px;padding:16px 0}
+ .serviceItem figure span{font-size:10px;padding:6px 8px}
+ .serviceItemBody h3{font-size:15px;margin-bottom:4px}
+ .serviceItemBody p{font-size:12px;line-height:1.8}
  .stepFlow{grid-template-columns:1fr;gap:28px}
- .machineGrid{grid-template-columns:1fr;gap:16px;margin-top:44px}
- .machine{padding:26px 24px 64px}
- .machineEn{font-size:46px}
- .galleryMosaic{grid-template-columns:1fr 1fr;gap:8px}
- .galleryMosaic figure:first-child{grid-column:span 2;grid-row:auto}
- .galleryMosaic figure:first-child img{aspect-ratio:16 / 10}
- .companyIntroHead{grid-template-columns:1fr;gap:20px;margin-bottom:28px}
+ .machineGrid{margin-top:44px}
+ .machine,.machine+.machine{grid-template-columns:96px minmax(0,1fr);gap:20px;padding:26px 0}
+ .machineIcon{width:96px;height:96px}
+ .machine h3{font-size:18px;margin:6px 0 8px}
+ .slide img{aspect-ratio:4 / 3}
+ .slide figcaption{padding-right:150px;font-size:12px;line-height:34px;margin-top:12px}
+ .sliderBar{height:34px}
+ .sliderBtn{width:34px;height:34px}
+ .companyIntro .leadText{margin-bottom:24px}
  .companyIntroPhoto img{aspect-ratio:4 / 3}
  .companyIntroPhoto figcaption{font-size:11px;padding:8px 14px}
- .companyIntroBody{grid-template-columns:1fr;gap:20px;margin-top:32px}
- .profileLayout{grid-template-columns:1fr;gap:28px}
+ .companyIntroBody{margin-top:28px}
+ .companyIntroBody .bodyText{font-size:14.5px;line-height:2}
+ .profileLayout{gap:28px}
  .profilePhoto img{aspect-ratio:16 / 10}
  .companyPage .profileTable th{width:100px;font-size:13px}
  .companyPage .profileTable th,.companyPage .profileTable td{padding:14px 4px}
@@ -247,15 +260,14 @@
  .trustSplit .trustPhoto{width:100%;opacity:.16;-webkit-mask-image:none;mask-image:none}
  .accessMap .mapFrame{height:320px}
  .accessMap .accessCard{position:static;width:auto;margin-top:12px}
- .channel{grid-template-columns:1fr;gap:12px;padding:26px 22px}
- .channel>p,.channel>div:last-child{grid-column:auto}
- .channelValue{font-size:30px}
- .channelMail .channelValue{font-size:clamp(17px,4.8vw,22px)}
- .guideLayout{gap:32px}
- .guidePhoto{box-shadow:10px 10px 0 #E3ECF6}
- .checkList li{grid-template-columns:36px minmax(0,1fr);gap:6px 14px;padding:18px 0}
- .checkList p{grid-column:2}
- .guideSplit .phoneCta{margin-top:36px}
+ .channelCards{grid-template-columns:1fr;gap:14px}
+ .channelCard{padding:26px 22px 22px;gap:10px}
+ .channelValue{font-size:28px}
+ .channelValue[href^="mailto:"]{font-size:clamp(17px,5vw,22px)}
+ .channelAction{padding:14px 18px;font-size:13px}
+ .contactGuide .lead{margin-bottom:28px}
+ .guideList{grid-template-columns:1fr}
+ .guideList li{padding:16px 0}
  .privacyLayout{gap:32px}
  .privacyBody article{padding-bottom:26px;margin-bottom:26px}
 }
