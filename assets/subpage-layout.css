@@ -1,0 +1,259 @@
+/* Sub-page layout system: section-by-section variation for barrel / company / contact / privacy.
+   Header, contact banner and footer are untouched; this file only shapes the content between them. */
+:root{--wide:1400px}
+.wrapWide{width:min(94%,var(--wide));margin:auto}
+.subpage .section{position:relative}
+.subpage .heading .en.compact{font-size:clamp(30px,3.6vw,44px)}
+.subpage .heading.center{text-align:center}
+.subpage .heading.center .ja{display:flex;justify-content:center;align-items:center;gap:16px}
+.subpage .heading.center .ja:before,.subpage .heading.center .ja:after{content:"";width:40px;height:1px;background:var(--teal)}
+.lead.center{margin-left:auto;margin-right:auto;text-align:center}
+.leadText{margin:0;font-family:"Noto Serif JP","Yu Mincho",serif;font-size:clamp(19px,2.1vw,25px);font-weight:600;line-height:1.85;letter-spacing:.06em;color:var(--deep);text-wrap:pretty}
+.bandTitle{display:flex;align-items:center;gap:16px;margin:0 0 40px;font-size:21px;font-weight:700;color:var(--deep);letter-spacing:.08em}
+.bandTitle:before{content:"";flex:none;width:36px;height:2px;background:var(--teal)}
+
+/* ---------- Barrel: ABOUT — photo bleeds to the viewport edge, editorial text on the right ---------- */
+.aboutEditorialLayout{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);gap:72px;align-items:center;padding-right:max(5%,calc((100% - var(--w)) / 2))}
+.aboutEditorialPhoto{margin:0;position:relative}
+.aboutEditorialPhoto img{aspect-ratio:5 / 4;object-fit:cover}
+.aboutEditorialPhoto figcaption{position:absolute;right:0;bottom:0;background:#fff;color:var(--deep);font-size:12px;letter-spacing:.12em;padding:12px 22px}
+.aboutEditorialText .leadText{margin-bottom:26px}
+.aboutEditorialText .bodyText{margin:0 0 18px}
+
+/* ---------- Barrel: three strengths as a numbered band ---------- */
+.pointSection{background:var(--ice);padding:84px 0}
+.pointGrid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr))}
+.point{position:relative;padding:8px 40px 8px 34px;border-left:1px solid rgba(35,71,117,.18)}
+.point:first-child{padding-left:0;border-left:0}
+.point .num{display:block;font:700 54px/1 Arial,sans-serif;color:#C4D7EE;letter-spacing:-.03em}
+.point h3{margin:18px 0 10px;font-size:19px;color:var(--deep)}
+.point p{margin:0;font-size:13.5px;line-height:2;color:var(--gray)}
+
+/* ---------- Barrel: BEFORE / AFTER on a dark band with a wide comparison ---------- */
+.resultDark{background:linear-gradient(118deg,#183B67 0%,#234775 52%,#245E74 100%);color:#fff;overflow:hidden}
+.resultDark:before{content:"";position:absolute;left:-140px;bottom:-280px;width:540px;height:540px;border-radius:50%;border:1px solid rgba(255,255,255,.12);box-shadow:0 0 0 90px rgba(255,255,255,.025)}
+.resultDark .wrap,.resultDark .wrapWide{position:relative}
+.resultDark .heading .ja{color:#B8DDE2}
+.resultDark .heading .ja:before,.resultDark .heading .ja:after{background:rgba(255,255,255,.4)}
+.resultDark .heading .en{color:#fff}
+.resultDark .lead{color:rgba(255,255,255,.82)}
+.compare{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin:52px auto 0}
+.compareItem{margin:0;display:flex;flex-direction:column}
+.compareMedia{position:relative;background:#fff;padding:10px}
+.compareMedia img{aspect-ratio:4 / 3;object-fit:cover}
+.compareMedia:after{content:attr(data-label);position:absolute;top:22px;left:22px;background:rgba(23,40,61,.88);color:#fff;font:700 11px Arial,sans-serif;letter-spacing:.2em;padding:8px 13px}
+.compareItem+.compareItem .compareMedia:before{content:"→";position:absolute;z-index:3;left:-44px;top:50%;width:64px;height:64px;margin-top:-32px;border-radius:50%;background:#fff;color:var(--blue);display:grid;place-items:center;font:700 28px/1 Arial,sans-serif;box-shadow:0 10px 26px rgba(8,24,43,.3)}
+.compareItem figcaption{display:flex;align-items:baseline;gap:14px;margin-top:16px;font-size:13px;line-height:1.8;color:rgba(255,255,255,.78)}
+.compareItem figcaption strong{flex:none;font-size:15px;color:#fff;letter-spacing:.1em}
+
+/* ---------- Barrel: PROCESSING — sticky intro on the left, definition rows on the right ---------- */
+.processingLayout{display:grid;grid-template-columns:minmax(0,.4fr) minmax(0,.6fr);gap:64px;align-items:start}
+.processingIntro{position:sticky;top:40px}
+.processingIntro .heading{margin-bottom:24px}
+.processingIntro .heading .en{font-size:clamp(40px,4.6vw,58px)}
+.processingIntro .lead{margin:0}
+.processingList{list-style:none;margin:0;padding:0;border-top:1px solid var(--line)}
+.processingList li{display:grid;grid-template-columns:44px 200px minmax(0,1fr);gap:20px;padding:30px 0;border-bottom:1px solid var(--line)}
+.processingList .num,.processingNote .num{font:700 12px/2 Arial,sans-serif;color:var(--teal);letter-spacing:.14em}
+.processingList b{font-size:17px;line-height:1.7;color:var(--deep)}
+.processingList p,.processingNote p{margin:0;font-size:14px;line-height:2;color:var(--gray)}
+.processingNote{grid-column:2;margin-top:28px;display:grid;grid-template-columns:44px minmax(0,1fr);gap:20px;padding:30px 32px;background:var(--ice);border-left:3px solid var(--teal)}
+.processingNote b{display:block;font-size:17px;color:var(--deep);margin-bottom:8px}
+
+/* ---------- Barrel: PROCESS — a four-step flow, then two machine panels ---------- */
+.stepFlow{list-style:none;margin:0;padding:44px 0 0;position:relative;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:32px}
+.stepFlow:before{content:"";position:absolute;left:0;right:0;top:22px;height:1px;background:linear-gradient(90deg,var(--teal),var(--blue) 60%,var(--accent))}
+.stepFlow li{position:relative;padding:20px 8px 0 0}
+.stepNum{position:absolute;top:-44px;left:0;width:44px;height:44px;border-radius:50%;background:#fff;border:1px solid var(--blue);color:var(--blue);display:grid;place-items:center;font:700 13px Arial,sans-serif;letter-spacing:.08em;box-shadow:0 0 0 8px #F8FAFD}
+.stepFlow b{display:block;font-size:17px;color:var(--deep);margin:0 0 8px}
+.stepFlow p{margin:0;font-size:13.5px;line-height:2;color:var(--gray)}
+.machineGrid{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:72px}
+.machine{position:relative;overflow:hidden;background:#fff;padding:36px 40px 84px;border-top:3px solid var(--blue);box-shadow:0 12px 34px rgba(35,71,117,.07)}
+.machine:nth-child(2){border-top-color:var(--teal)}
+.machineEn{position:absolute;right:-4px;bottom:-12px;font:700 56px/1 Arial,sans-serif;color:rgba(56,116,188,.06);letter-spacing:-.02em;pointer-events:none}
+.machine h3{margin:0 0 10px;font-size:21px;color:var(--deep)}
+.machine p{margin:0;font-size:14px;line-height:2;color:var(--gray)}
+
+/* ---------- Barrel: GALLERY — one large photo with four supporting shots ---------- */
+.galleryMosaic{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin:8px auto 0}
+.galleryMosaic figure{margin:0;position:relative;overflow:hidden;display:grid}
+.galleryMosaic figure:first-child{grid-column:span 2;grid-row:span 2}
+.galleryMosaic img{width:100%;height:100%;object-fit:cover;aspect-ratio:4 / 3}
+.galleryMosaic figure:first-child img{aspect-ratio:auto}
+.galleryMosaic figcaption{position:absolute;left:0;right:0;bottom:0;padding:34px 16px 12px;background:linear-gradient(transparent,rgba(23,40,61,.72));color:#fff;font-size:11px;letter-spacing:.12em}
+
+/* ---------- Company: ABOUT US — heading + statement, wide photo, three-column body ---------- */
+.companyIntroHead{display:grid;grid-template-columns:minmax(0,.45fr) minmax(0,.55fr);gap:48px;align-items:end;margin-bottom:44px}
+.companyIntroHead .heading{margin-bottom:0}
+.companyIntroPhoto{margin:0 auto;position:relative}
+.companyIntroPhoto img{aspect-ratio:16 / 7;object-fit:cover}
+.companyIntroPhoto figcaption{position:absolute;left:0;bottom:0;background:rgba(255,255,255,.94);color:var(--deep);font-size:12px;letter-spacing:.12em;padding:12px 24px}
+.companyIntroBody{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:40px;margin-top:52px}
+.companyIntroBody .bodyText{margin:0;padding-top:22px;border-top:1px solid var(--line);font-size:14px}
+
+/* ---------- Company: PROFILE — key facts first, then the table in two columns ---------- */
+.keyFacts{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));margin:0 0 48px;border-top:1px solid rgba(35,71,117,.16);border-bottom:1px solid rgba(35,71,117,.16)}
+.keyFacts div{display:flex;flex-direction:column;gap:6px;padding:28px 32px;border-left:1px solid rgba(35,71,117,.16)}
+.keyFacts div:first-child{border-left:0;padding-left:0}
+.keyFacts span{font:700 11px Arial,sans-serif;letter-spacing:.2em;color:var(--teal)}
+.keyFacts strong{font:700 clamp(30px,3.2vw,40px)/1.2 Arial,"Noto Sans JP",sans-serif;color:var(--deep);letter-spacing:.02em}
+.keyFacts strong small{font-size:.5em;margin-left:4px}
+.keyFacts em{font-style:normal;font-size:12px;color:var(--gray)}
+.profileGrid{display:grid;grid-template-columns:1fr 1fr;gap:24px;align-items:start}
+.companyPage .profileGrid .profile th{width:140px}
+
+/* ---------- Company: HISTORY — a horizontal timeline ---------- */
+.historySection{overflow:hidden}
+.historySection:before{content:"SINCE 1972";position:absolute;right:-10px;top:56px;font:700 clamp(80px,12vw,180px)/1 Arial,sans-serif;color:rgba(86,82,163,.05);letter-spacing:-.05em;pointer-events:none;white-space:nowrap}
+.historySection .wrap{position:relative}
+.historyFlow{list-style:none;margin:16px 0 0;padding:44px 0 0;position:relative;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:48px}
+.historyFlow:before{content:"";position:absolute;left:0;right:0;top:0;height:1px;background:linear-gradient(90deg,var(--teal),var(--blue) 55%,var(--accent))}
+.historyFlow li{position:relative}
+.historyFlow li:before{content:"";position:absolute;left:0;top:-50px;width:12px;height:12px;border-radius:50%;background:var(--blue);border:3px solid #fff;box-shadow:0 0 0 1px var(--blue)}
+.historyFlow .year{display:block;font:700 clamp(36px,4vw,52px)/1 Arial,sans-serif;color:var(--blue);letter-spacing:-.01em}
+.historyFlow .year.jp{font-family:"Noto Serif JP","Yu Mincho",serif;font-size:clamp(26px,3vw,34px);font-weight:600;letter-spacing:.06em;line-height:1.3;color:var(--deep)}
+.historyFlow .year small{font-size:.42em;margin-left:2px}
+.historyFlow strong{display:block;margin:18px 0 10px;font-size:18px;color:var(--deep)}
+.historyFlow p{margin:0;font-size:14px;line-height:2.05;color:var(--gray)}
+
+/* ---------- Company: TRUST — copy on the left, photo fading in from the right ---------- */
+.trustSplit{overflow:hidden;min-height:520px;display:flex;align-items:center}
+.trustSplit .trustPhoto{position:absolute;right:0;top:0;width:46%;height:100%;object-fit:cover;opacity:.5;-webkit-mask-image:linear-gradient(90deg,transparent,#000 35%);mask-image:linear-gradient(90deg,transparent,#000 35%)}
+.trustSplit .wrap{position:relative;z-index:1}
+.trustLayout{max-width:600px}
+.trustLayout .heading{margin-bottom:28px}
+.trustLayout p{margin:0 0 16px;font-size:14.5px;line-height:2.15;color:#E7EFF8}
+.trustTags{list-style:none;display:flex;flex-wrap:wrap;align-items:center;gap:10px;margin:26px 0 0;padding:24px 0 0;border-top:1px solid rgba(255,255,255,.22)}
+.trustTags li{font-size:12px;letter-spacing:.1em;color:#fff;border:1px solid rgba(255,255,255,.4);padding:6px 14px}
+.trustTags li:first-child{border:0;padding-left:0;color:#B8E0E4;font-weight:700}
+
+/* ---------- Company: ACCESS — full-width map with a floating address card ---------- */
+.accessMap{position:relative;margin-top:8px}
+.accessMap .mapFrame{height:540px;display:block}
+.accessMap .accessCard{position:absolute;left:40px;bottom:40px;width:min(380px,calc(100% - 80px));z-index:2}
+.accessCard h3{margin:0 0 12px;font-size:19px;color:var(--deep)}
+.accessCard p{margin:0 0 10px;font-size:14px}
+.accessCard .bodyText{font-size:13px}
+
+/* ---------- Contact: INFORMATION — phone as the primary dark row, mail as the secondary row ---------- */
+.channelList{display:grid;gap:20px}
+.channel{display:grid;grid-template-columns:220px minmax(0,1fr) minmax(0,1fr);gap:32px;align-items:center;padding:40px 44px}
+.channelPhone{background:linear-gradient(118deg,#1E4373 0%,#234775 50%,#256A7C 100%);color:#fff;box-shadow:0 18px 40px -20px rgba(23,40,61,.5)}
+.channelMail{background:#fff;border:1px solid var(--line)}
+.channelLabel{display:flex;flex-direction:column;gap:8px;font-size:15px;font-weight:700;line-height:1.6}
+.channelLabel span{font:700 11px Arial,sans-serif;letter-spacing:.24em;color:var(--teal)}
+.channelPhone .channelLabel span{color:#B8DDE2}
+.channelValue{display:inline-block;font:700 clamp(28px,3.4vw,44px)/1.3 Arial,sans-serif;letter-spacing:.02em;color:var(--blue)}
+.channelPhone .channelValue{color:#fff}
+.channelMail .channelValue{font-size:clamp(19px,2.2vw,26px);overflow-wrap:anywhere}
+.channelValue:focus-visible{outline:2px solid currentColor;outline-offset:4px}
+.channel p{margin:0;font-size:13.5px;line-height:2;color:var(--gray)}
+.channelPhone p{color:rgba(255,255,255,.84)}
+.channelMail .infoLink{margin-top:14px;padding-top:10px}
+
+/* ---------- Contact: GUIDE — intro and photo on the left, two-column checklist on the right ---------- */
+.guideLayout{display:grid;grid-template-columns:minmax(0,.42fr) minmax(0,.58fr);gap:64px;align-items:start}
+.guideIntro .heading{margin-bottom:22px}
+.contactGuide .guideIntro .lead{margin:0 0 30px;font-size:14px}
+.guidePhoto{aspect-ratio:3 / 2;object-fit:cover;box-shadow:16px 16px 0 #E3ECF6}
+.checkList{list-style:none;margin:0;padding:0;border-top:1px solid rgba(35,71,117,.18)}
+.checkList li{display:grid;grid-template-columns:36px 200px minmax(0,1fr);gap:14px 20px;align-items:baseline;padding:25px 0;border-bottom:1px solid rgba(35,71,117,.14)}
+.checkList span{font:700 12px/2 Arial,sans-serif;color:var(--teal);letter-spacing:.14em}
+.checkList h3{margin:0;font-size:16px;color:var(--deep)}
+.checkList p{margin:0;font-size:13px;color:var(--gray);line-height:1.9}
+.guideSplit .phoneCta{margin-top:56px}
+
+/* ---------- Privacy: index on the left, numbered articles on the right ---------- */
+.privacyLayout{display:grid;grid-template-columns:minmax(0,.36fr) minmax(0,.64fr);gap:72px;align-items:start}
+.privacyNav{position:sticky;top:40px}
+.privacyNav .heading{margin-bottom:26px}
+.privacyNav nav{display:grid;border-top:1px solid var(--line)}
+.privacyNav nav a{display:flex;gap:14px;align-items:baseline;padding:12px 0;border-bottom:1px solid var(--line);font-size:13px;font-weight:700;color:var(--deep)}
+.privacyNav nav a span{font:700 11px Arial,sans-serif;color:var(--teal);letter-spacing:.14em}
+.privacyNav nav a:hover{color:var(--blue)}
+.privacyBody article{padding:0 0 36px;margin-bottom:36px;border-bottom:1px solid var(--line);scroll-margin-top:24px}
+.privacyBody article:last-of-type{border-bottom:0;margin-bottom:0;padding-bottom:0}
+.privacyBody h2{display:flex;align-items:baseline;gap:16px;margin:0 0 14px;font-size:19px;color:var(--deep)}
+.privacyBody h2 span{font:700 12px Arial,sans-serif;color:var(--teal);letter-spacing:.14em}
+.privacyBody .bodyText{margin:0 0 12px}
+.privacyContact{display:grid;gap:8px;margin-top:18px;padding:22px 26px;background:var(--ice);font-size:14px}
+.privacyContact a{color:var(--blue);font-weight:700}
+.privacyContact span{font:700 11px Arial,sans-serif;letter-spacing:.2em;color:var(--teal);margin-right:12px}
+
+@media(max-width:1024px){
+ .aboutEditorialLayout{gap:40px}
+ .processingLayout{grid-template-columns:1fr;gap:36px}
+ .processingIntro{position:static}
+ .processingNote{grid-column:auto}
+ .stepFlow{grid-template-columns:1fr 1fr;gap:36px 32px;padding-top:0}
+ .stepFlow:before{display:none}
+ .stepFlow li{padding-top:0}
+ .stepNum{position:static;margin-bottom:14px;box-shadow:none}
+ .companyIntroBody{grid-template-columns:1fr 1fr}
+ .historyFlow{gap:32px}
+ .channel{grid-template-columns:180px minmax(0,1fr);gap:20px 32px}
+ .channel>p,.channel>div:last-child{grid-column:2}
+ .guideLayout{grid-template-columns:1fr;gap:40px}
+ .privacyLayout{grid-template-columns:1fr;gap:40px}
+ .privacyNav{position:static}
+}
+@media(max-width:767px){
+ .wrapWide{width:min(90%,var(--wide))}
+ .leadText{font-size:19px}
+ .bandTitle{font-size:18px;margin-bottom:28px}
+ .aboutEditorialLayout{grid-template-columns:1fr;gap:28px;padding:0;width:90%;margin:auto}
+ .aboutEditorialPhoto img{aspect-ratio:4 / 3}
+ .aboutEditorialPhoto figcaption{font-size:11px;padding:8px 14px}
+ .pointSection{padding:56px 0}
+ .pointGrid{grid-template-columns:1fr}
+ .point{padding:22px 0;border-left:0;border-top:1px solid rgba(35,71,117,.18)}
+ .point:first-child{border-top:0;padding-top:0}
+ .point .num{font-size:40px}
+ .compare{grid-template-columns:1fr;gap:64px;margin-top:36px}
+ .compareMedia{padding:8px}
+ .compareMedia:after{top:18px;left:18px}
+ .compareItem+.compareItem .compareMedia:before{left:50%;top:-32px;margin:-32px 0 0 -32px;transform:rotate(90deg)}
+ .processingList li{grid-template-columns:36px minmax(0,1fr);gap:8px 14px;padding:22px 0}
+ .processingList p{grid-column:2}
+ .processingNote{grid-template-columns:36px minmax(0,1fr);gap:14px;padding:22px 20px}
+ .stepFlow{grid-template-columns:1fr;gap:28px}
+ .machineGrid{grid-template-columns:1fr;gap:16px;margin-top:44px}
+ .machine{padding:26px 24px 64px}
+ .machineEn{font-size:46px}
+ .galleryMosaic{grid-template-columns:1fr 1fr;gap:8px}
+ .galleryMosaic figure:first-child{grid-column:span 2;grid-row:auto}
+ .galleryMosaic figure:first-child img{aspect-ratio:16 / 10}
+ .companyIntroHead{grid-template-columns:1fr;gap:20px;margin-bottom:28px}
+ .companyIntroPhoto img{aspect-ratio:4 / 3}
+ .companyIntroPhoto figcaption{font-size:11px;padding:8px 14px}
+ .companyIntroBody{grid-template-columns:1fr;gap:20px;margin-top:32px}
+ .keyFacts{grid-template-columns:1fr;margin-bottom:32px}
+ .keyFacts div{border-left:0;border-top:1px solid rgba(35,71,117,.16);padding:18px 0}
+ .keyFacts div:first-child{border-top:0}
+ .profileGrid{grid-template-columns:1fr;gap:12px}
+ .companyPage .profileGrid .profile th{width:105px}
+ .historySection:before{font-size:72px;top:30px}
+ .historyFlow{grid-template-columns:1fr;gap:0;padding:0 0 0 28px;margin-top:8px}
+ .historyFlow:before{left:5px;right:auto;top:8px;bottom:8px;width:1px;height:auto;background:linear-gradient(var(--teal),var(--blue),var(--accent))}
+ .historyFlow li{padding:0 0 32px}
+ .historyFlow li:last-child{padding-bottom:0}
+ .historyFlow li:before{left:-28px;top:10px}
+ .historyFlow .year{font-size:32px}
+ .historyFlow .year.jp{font-size:24px}
+ .historyFlow strong{margin:10px 0 6px;font-size:16px}
+ .trustSplit{min-height:0}
+ .trustSplit .trustPhoto{width:100%;opacity:.16;-webkit-mask-image:none;mask-image:none}
+ .accessMap .mapFrame{height:320px}
+ .accessMap .accessCard{position:static;width:auto;margin-top:12px}
+ .channel{grid-template-columns:1fr;gap:12px;padding:26px 22px}
+ .channel>p,.channel>div:last-child{grid-column:auto}
+ .channelValue{font-size:30px}
+ .channelMail .channelValue{font-size:clamp(17px,4.8vw,22px)}
+ .guideLayout{gap:32px}
+ .guidePhoto{box-shadow:10px 10px 0 #E3ECF6}
+ .checkList li{grid-template-columns:36px minmax(0,1fr);gap:6px 14px;padding:18px 0}
+ .checkList p{grid-column:2}
+ .guideSplit .phoneCta{margin-top:36px}
+ .privacyLayout{gap:32px}
+ .privacyBody article{padding-bottom:26px;margin-bottom:26px}
+}
