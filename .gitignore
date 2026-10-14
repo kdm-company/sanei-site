@@ -30,3 +30,6 @@ yarn-error.log*
 
 # アップロード素材の一時置き場
 tmp/
+
+# Python
+__pycache__/
