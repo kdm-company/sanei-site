@@ -4,6 +4,9 @@ on:
   push:
     branches: [main]
   workflow_dispatch:
+  schedule:
+    # note の新着記事を取り込むため 3時間ごとに再デプロイ
+    - cron: '0 */3 * * *'
 
 permissions:
   contents: read
@@ -22,6 +25,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+
+      - name: Fetch latest note articles
+        run: python3 scripts/fetch_note_feed.py
 
       - uses: actions/configure-pages@v5
         with:
