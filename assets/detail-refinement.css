@@ -1,5 +1,5 @@
 /* Requested header, news and contact refinements. */
-.header .brand{width:178px}
+.header .brand{width:auto}
 .nav a.current{height:auto;position:relative;border-bottom:0}
 .nav a.current:after{content:"";position:absolute;left:0;right:0;bottom:-10px;height:2px;background:var(--blue)}
 .news{display:block}
@@ -16,7 +16,7 @@
 .contactBanner .bannerLink{width:100%;min-height:94px;border-radius:0;font-size:19px;gap:36px;box-shadow:0 8px 22px rgba(8,24,43,.24)}
 .contactBanner .bannerArrow{font-size:26px}
 @media(max-width:767px){
- .header .brand{width:144px}
+ .header .brand{width:auto}
  .news h2{margin-bottom:16px}
  .contactBannerSection{padding:32px 0}
  .contactBanner{padding:36px 24px}
