@@ -6,7 +6,7 @@
 .historyBand .en{color:var(--blue)}
 .historyBand p{color:var(--gray)}
 .historyBand .button{border-color:var(--blue);color:var(--blue)}
-.contactBanner:before{content:"";position:absolute;inset:0;z-index:-2;background:url("photos/06_factory_processing_line.webp") center 54% / cover no-repeat;opacity:.12;pointer-events:none}
+.contactBanner:before{content:"";position:absolute;inset:0;z-index:-2;background:url("photos/06_factory_processing_line.webp?v=20261015") center 54% / cover no-repeat;opacity:.12;pointer-events:none}
 @media(max-width:767px){
  .header .brand{width:auto;gap:9px}
  .header .brand img{height:34px}
