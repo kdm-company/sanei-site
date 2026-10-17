@@ -26,4 +26,4 @@
 
 ## 旧確認用 URL
 
-公開前のクライアント確認には GitHub Pages（https://kdm-company.github.io/sanei-site/）を使っていた。`.github/workflows/pages.yml` が main への push で更新する。
+公開前のクライアント確認には GitHub Pages（kdm-company.github.io/sanei-site）を使っていた。本番公開（2026-10-17）に合わせて Pages と公開ワークフローは停止・削除した。
