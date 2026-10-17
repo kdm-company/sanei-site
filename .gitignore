@@ -38,3 +38,6 @@ __pycache__/
 差し替え写真/**/*
 !差し替え写真/**/
 !差し替え写真/**/README.md
+
+# wrangler
+.wrangler/
