@@ -1,0 +1,14 @@
+_worker.js
+.git
+.gitignore
+.github
+.wrangler
+.claude
+.DS_Store
+**/.DS_Store
+node_modules
+*.md
+wrangler.jsonc
+.assetsignore
+scripts
+差し替え写真

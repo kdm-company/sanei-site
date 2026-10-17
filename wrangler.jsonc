@@ -1,0 +1,12 @@
+{
+  // Cloudflare Workers 静的サイト設定（sanei-barrel.jp）
+  "name": "sanei-site",
+  "main": "_worker.js",
+  "compatibility_date": "2026-10-17",
+  "assets": {
+    "directory": "./",
+    "binding": "ASSETS",
+    "html_handling": "auto-trailing-slash",
+    "run_worker_first": true
+  }
+}
