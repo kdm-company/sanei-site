@@ -2,7 +2,9 @@
 
 金属バレル加工・表面処理加工の株式会社サンエイ（東大阪市）の公式サイト。静的 HTML/CSS。
 
-- 本番ドメイン：https://sanei-barrel.jp/（エックスサーバーで取得、DNS は Cloudflare）
+- 本番ドメイン：https://sanei-barrel.jp/（エックスサーバー（Xserverドメイン）で取得。DNS は Cloudflare：ネームサーバー fred / lucy.ns.cloudflare.com、2026-10-17 にゾーン追加）
+- ドメインは Worker の**カスタムドメイン**（`wrangler.jsonc` の `routes`）で受ける。`sanei-barrel.jp` と `www.sanei-barrel.jp`。DNS レコードは Cloudflare が自動で作るので手で消さない。Always Use HTTPS はオン
+- workers.dev の URL は無効（本番ドメインのみ）
 - ホスティング：Cloudflare Workers `sanei-site`（KDM アカウント）。設定は `wrangler.jsonc`
 - **デプロイは手元から `npx wrangler@4 deploy`**（Git 連携なし）。GitHub は `kdm-company/sanei-site`（push は kdm-company アカウントで）
 - 4ページ構成：TOP / バレル加工について（`barrel/`）/ 会社概要（`company/`）/ お問い合わせ（`contact/`）＋ プライバシーポリシー（`privacy/`、noindex）
